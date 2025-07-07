@@ -14,6 +14,7 @@ import { useFormik } from "formik";
 import registerSchema from "../../utils/register";
 import { IoMdPlayCircle } from "react-icons/io";
 import { PiArrowBendDoubleUpLeftFill } from "react-icons/pi";
+import commentImg from '../../assets/images/comment-image.png'
 const CourseDetails = () => {
   const [courses, setCourses] = useState(coursesList);
   const courseID = useParams().courseId;
@@ -126,30 +127,37 @@ const CourseDetails = () => {
                 <Col>
                   <div className="containers education-container">
                     <h4>Seasons : </h4>
-                    <Accordion className="seasons-container">
+                    {course.seasons.map(season => {
+                      return(
+                      <Accordion key={season.id} className="seasons-container">
                       <Accordion.Item eventKey="0">
-                        <Accordion.Header>Season 1</Accordion.Header>
+                        <Accordion.Header>{season.title}</Accordion.Header>
                         <Accordion.Body>
-                          <div className="season-meeting-container">
+                          {season.sessions.map(session => {
+                            return(
+                          <div key={session.id} className="season-meeting-container">
                             <div className="season-meeting-title-box">
                             <IoMdPlayCircle/>
-                            <h6>Meeting name</h6>
+                            <h6>{session.title}</h6>
                             </div>
-                            <p>23:40</p>
+                            <p>{session.duration}</p>
                           </div>
+                            )
+                          })}
                         </Accordion.Body>
                       </Accordion.Item>
                     </Accordion>
+                    )})}
                   </div>
                 </Col>
               </Row>
               <Row>
                 <Col>
                   <section className="teacher-course-box containers">
-                    <img src="./" alt="teacher photo" />
-                    <h3 className="teacher-name">Teacher : </h3>
-                    <p>About Teacher : </p>
-                    <Link to="">
+                    <img src={course.teacher.img} alt="teacher photo" />
+                    <h3 className="teacher-name">Teacher : {course.teacher.name}</h3>
+                    <p>About Teacher : {course.teacher.bio}</p>
+                    <Link to={`/`}>
                       <button className="info-teacher info-teacher">
                         Teacher Info
                       </button>
@@ -213,25 +221,32 @@ const CourseDetails = () => {
               </Row>
               <Row>
                 <Col>
+                  {course.comments.map(commentDetails => {
+                    return(
                   <div className="containers comment">
                     <div className="comment-title">
-                      <img src="" alt="Comment Setter" />
-                      <h6>UserName</h6>
+                      <img src={commentImg} alt="Comment Setter" />
+                      <h6>{commentDetails.name}</h6>
                     </div>
-                    <span>Date</span>
-                    <p>comment</p>
-                    <div className="response-comment-container">
+                    <span>{commentDetails.date}</span>
+                    <p>{commentDetails.email}</p>
+                    <p>{commentDetails.comment}</p>
+                    {commentDetails.responses.map(res => {
+                      return(
+                      <div className="response-comment-container">
                     <PiArrowBendDoubleUpLeftFill/>
                       <div className="responses-comment">
                         <div className="response-comment-title">
-                          <img src="" alt="responser" />
-                          <h6>ResponserName</h6>
+                          <img src={course.teacher.img} alt="responser" />
+                          <h6>{res.name}</h6>
                         </div>
-                        <span>Date</span>
-                        <p>Response Comment</p>
+                        <span>{res.date}</span>
+                        <p>{res.comment}</p>
                       </div>
                     </div>
+                      )})}
                   </div>
+                    )})}
                 </Col>
               </Row>
             </Container>
