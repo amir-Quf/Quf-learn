@@ -1,0 +1,23 @@
+.footer {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  padding: 40px 20px;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.footer-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 5px;
+  display: block;
+}
+.footer-copy {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+}

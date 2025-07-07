@@ -1,0 +1,327 @@
+.containers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-primary);
+    flex-direction: column;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 3px #ccc;
+}
+
+.course-Details-container{
+    margin-top: 80px;
+    background-color: #f9731610;
+    box-shadow: 0 0 5px 3px #ccc;
+    border-radius: 15px;
+    padding: 30px 5px;
+}
+
+.course-img-box{
+    width: 80%;
+    height: 400px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-left: 40px;
+}
+
+.course-img-box__cover{
+    width: 100%;
+    height: 100%;
+}
+
+.about-title-course{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left !important;
+    margin-right: 0px;
+}
+
+.about-title-course h2{
+    display: inline;
+    text-align: left !important;
+    margin-bottom: 20px;
+}
+
+.about-title-course h4{
+    display: inline;
+}
+
+.about-title-course p{
+    font-weight: 500;
+    font-size: large;
+}
+
+.about-title-course p span{
+    color: var(--text-color); 
+    font-size: medium;   
+}
+
+.buy-course{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buy-course button{
+    border: none;
+    background-color: var(--tertiary-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    text-shadow: 0 0 3px ;
+    transition: all 0.25s ease-in-out;
+    margin-right: 50px;
+}
+
+.buy-course button:hover{
+    /* background-color: #00fdf0; */
+    filter: brightness(0.8);
+}
+
+.buy-course button svg{
+    color: #000;
+    text-shadow: 0 0 5px var(--primary-color) !important;
+    font-size: 20px;
+}
+
+.price-course{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-before-discount{
+    color: var(--text-color);
+    text-decoration: 2px line-through;
+}
+
+.price-of-course{
+    font-weight: bold !important;
+    font-size: 1.5rem !important;
+}
+
+.free{
+    color: green;
+    font-weight: bolder;
+}
+
+.info-courses-details{
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px;
+}
+
+.svgs{
+    font-size: 50px;
+}
+
+.info-courses-details__info {
+    margin: 10px;
+}
+
+.info-courses-details__info p{
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* description course */
+
+.container-desc{
+    align-items: start;
+    padding: 30px;
+}
+
+.container-desc p{
+    text-align: justify;
+}
+
+/* seasons */
+
+.education-container{
+    align-items: start;
+    padding: 20px 40px;
+}
+
+.seasons-container{
+    width: 95%;
+}
+
+.accordion-button:focus{
+    box-shadow: none !important;
+    background-color: var(--hover-color) !important;
+}
+
+.accordion-button{
+    background-color: var(--secondary-color) !important;
+
+}
+
+.season-meeting-container{
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.season-meeting-container p {
+    margin: auto 0;
+}
+
+.season-meeting-title-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.season-meeting-title-box svg{
+    font-size: 20px;
+}
+
+.season-meeting-title-box h6{
+    margin: auto;
+}
+
+/* teacher Info */
+
+
+.teacher-course-box img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: none;
+}
+
+.info-teacher{
+    border: none;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    transition: all 0.25s ease-in-out;
+}
+
+.info-teacher:hover{
+    background-color: var(--hover-color);
+}
+
+/* send comment */
+
+.send-comment-container{
+    align-items: start;
+    padding: 40px;
+    background-color: var(--bg-secondary);
+}
+.send-comment-container input{
+    border: none;
+    border-radius: 10px;
+    width: 40%;
+    padding: 10px;
+
+}
+.send-comment-container label{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.send-comment-container p{
+    color: red;
+}
+.send-comment-container button{
+    border: none;
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    transition: all 0.25s ease-in-out;
+}
+
+.send-comment-container textarea{
+    all: unset;
+    border: none;
+    width: 40%;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.send-comment-container textarea:focus{
+    border: 2px solid #000;
+}
+
+.send-comment-container button:hover{
+    background-color: var(--hover-color);
+}
+
+/* comments */
+
+.comment{
+    align-items: start;
+    padding: 30px;
+}
+
+.comment-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.comment svg{
+    font-size: 25px;
+}
+
+.comment-title img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.comment-title h6{
+    font-weight: 700;
+}
+
+.comment p{
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.response-comment-container{
+    /* margin-left: 40px; */
+    border-radius: 5px;
+    width: 90%;
+    display: flex;
+}
+
+.response-comment-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.response-comment-title img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.response-comment-title h6{
+    font-weight: 700;
+}
+
+.responses-comment{
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}

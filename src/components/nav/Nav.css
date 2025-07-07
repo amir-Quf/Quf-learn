@@ -1,0 +1,43 @@
+.my-navbar{
+    position: fixed !important;
+    width: 100vw;
+    top: 0;
+    z-index: 5;
+    background-color: var(--bg-secondary) !important;
+}
+
+.title-navbar{
+    color: var(--primary-color) !important;
+    text-shadow: 0 0 5px var(--tertiary-color);
+}
+
+.navbar-link{
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 5px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.active{
+    color: var(--primary-color);
+    border-bottom: 2px solid #1f1f1f;
+    font-weight: bolder;
+}
+
+.offcanvas-navbar{
+    background-color: var(--text-color) !important;
+}
+
+.offcanvas-title{
+    color: var(--primary-color) !important;
+    text-shadow: 0 0 5px var(--text-color);
+    margin: 20px 10px;
+}
+
+
+@media screen and (max-width : 800px){
+        .offcanvas-links{
+            margin-top: 70px !important;
+        }
+}
