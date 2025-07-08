@@ -1,14 +1,21 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import MyNavbar from "../../components/nav/Nav";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import coursesList from "../../store/coursesList";
 import Footer from "../../components/footer/Footer";
+import fetchApi from "../../store/server";
+import useCourseStore from "../../store/courseDatas";
 
 const Home = () => {
-  const [courses, setCourses] = useState(coursesList);
+  // const [courses, setCourses] = useState([]);
+  const fetchCourses = useCourseStore(state => state.fetchCourses)
+  useEffect(() => {
+    fetchCourses()
+  }, [fetchCourses])
+  const courses = useCourseStore(state => state.courses)
+  
   return (
     <>
       <header className="header">

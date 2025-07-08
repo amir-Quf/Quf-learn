@@ -3,7 +3,7 @@ import './App.css'
 import Home from './pages/home/Home';
 import AdminAnalytics from './pages/adminDashboard/adminAnalytics/AdminAnalytics';
 import AdminCourseManagement from './pages/adminDashboard/adminCourseManagement/AdminCourseManagement';
-import CourseDetails from './pages/courseDetails/CourseDetails';
+import CourseDetails from './pages/courses/courseDetails/CourseDetails';
 import AdminDashboard from './pages/adminDashboard/AdminDashboard';
 import Courses from './pages/courses/Courses';
 import Dashboard from './pages/dashboard/Dashboard';

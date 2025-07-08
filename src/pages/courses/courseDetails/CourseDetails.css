@@ -18,6 +18,17 @@
     padding: 30px 5px;
 }
 
+.title-course{
+    display: flex;
+    align-items: center;
+}
+
+.title-course p{
+    margin-left: 10px;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+}
+
 .course-img-box{
     width: 80%;
     height: 400px;
