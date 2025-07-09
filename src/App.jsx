@@ -12,12 +12,14 @@ import UserCourses from './pages/userCourses/UserCourses';
 import Profile from './pages/profile/Profile';
 import Register from './pages/register/Register';
 import UserComments from './pages/userComments/UserComments';
+import ForgotPassword from './pages/login/forgotPassword/ForgotPassword';
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/login/forgot-password' element={<ForgotPassword/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/profile' element={<Profile/>}/>
       <Route path='/courses/' element={<Courses/>}/>
