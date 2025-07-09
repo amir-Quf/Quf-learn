@@ -5,24 +5,29 @@ import { useFormik } from 'formik'
 import { Link, useNavigate } from 'react-router-dom'
 import fetchApi from '../../../store/server'
 import Swal from 'sweetalert2'
-import registerSchema from '../../../utils/register'
+import {registerSchemaForgotPassword} from '../../../utils/register'
 
 const ForgotPassword = () => {
-  const navigator = useNavigate()
   const form = useFormik({
     initialValues: {email:''},
     onSubmit: async (values, {resetForm, setSubmitting}) => {
-      const loginUser = {
-        email: values.email,
-      }
       try{
-        await fetchApi.get(`/users?email==${email}`)
-        .then(res => {
+        const res = await fetchApi.get('/users')
+        const users = res.data
+        const findUser = users.find(user => user.email == values.email)
+        if(findUser){
           Swal.fire({
-            title: 'new password sended to your email',
+            title: `your password : ${findUser.password}`,
             icon: 'success',
           })
-        })
+        } else {
+          Swal.fire({
+            title: 'not found user whit this email',
+            icon: 'error',
+            timer: 1500,
+          showConfirmButton: false
+          })
+        }
         resetForm()
       } catch (err){
         Swal.fire({
@@ -36,15 +41,15 @@ const ForgotPassword = () => {
         setSubmitting(false)
       }
     },
-    validationSchema: registerSchema,
+    validationSchema: registerSchemaForgotPassword,
   })
   return (
     <div>
       <MyNavbar/>
       <Container className='container-login'>
-        <form className='form-login' bindsubmit="">
+        <form className='form-login' onSubmit={form.handleSubmit} bindsubmit="">
           <input value={form.values.email} onBlur={form.handleBlur} onChange={form.handleChange} name='email' type="email" placeholder='Enter your email...'/>
-          <p>{form.errors.email && form.touched.email && form.errors.email}</p>
+          <p className='error-input'>{form.errors.email && form.touched.email && form.errors.email}</p>
           <button type='submit' disabled={form.isSubmitting}>{form.isSubmitting ? 'sending...' : 'send password'}</button>
           <p>Don`t have an account ? <Link to='/register'> Register</Link> </p>
           <Link to='/login'>i have received my password</Link>

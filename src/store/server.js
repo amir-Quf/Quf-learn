@@ -1,11 +1,12 @@
 import axios from "axios";
 
+const token = localStorage.getItem('token')
 
 const fetchApi = axios.create({
     baseURL: 'http://localhost:3000',
     headers: {
         "Content-Type" : "application/json",
-        Auth: '`Bearer ${token}`'
+        Authorization: `Bearer ${token}`
     }
 })
 

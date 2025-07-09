@@ -1,14 +1,15 @@
 import { useFormik } from "formik";
 import { Col } from "react-bootstrap";
-import registerSchema from "../../../utils/register";
+import {registerSchemaComment} from "../../../utils/register";
 import fetchApi from "../../../store/server";
 import { useParams } from "react-router-dom";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import useCourseStore from "../../../store/courseDatas";
 import Swal from "sweetalert2";
 
 const SendComment = () => {
     const courseID = useParams().courseId;
+    const {fetchCourses} = useCourseStore()
     const getCourseById = useCourseStore(state => state.getCourseById)
     const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
     const form = useFormik({
@@ -30,6 +31,7 @@ const SendComment = () => {
             timer: 1500,
         })
         resetForm()
+        fetchCourses()
       } catch (err){
         console.log('error message', err)
         Swal.fire({
@@ -41,7 +43,7 @@ const SendComment = () => {
         setSubmitting(false)
       }
     },
-    validationSchema: registerSchema,
+    validationSchema: registerSchemaComment,
   });
   return (
     <Col>
@@ -91,4 +93,4 @@ const SendComment = () => {
   );
 };
 
-export default SendComment;
+export default memo(SendComment);

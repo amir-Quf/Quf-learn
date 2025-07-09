@@ -2,9 +2,11 @@ import './Profile.css'
 
 const Profile = () => {
   return (
-    <div>
-      <h1>Profile Page</h1>
-    </div>
+    <div className="container-loader">
+      <div className="loader">
+      </div>
+        <h1>loading...</h1>
+      </div>
   )
 }
 

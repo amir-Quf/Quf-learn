@@ -102,7 +102,15 @@
           ]
         }
       ],
-      "comments": []
+      "comments": [
+        {
+          "name": "mohamad",
+          "email": "mamd1213@gmail.com",
+          "comment": "when will you update the course",
+          "date": "2025-07-09",
+          "responses": []
+        }
+      ]
     },
     {
       "id": "3",
@@ -218,7 +226,22 @@
           ]
         }
       ],
-      "comments": []
+      "comments": [
+        {
+          "name": "omid",
+          "email": "omid@gmail.com",
+          "comment": "this is so good course",
+          "date": "2025-07-09",
+          "responses": []
+        },
+        {
+          "name": "ahora",
+          "email": "user1@gmail.com",
+          "comment": "what does this course teach?",
+          "date": "2025-07-09",
+          "responses": []
+        }
+      ]
     },
     {
       "id": "6",
@@ -355,6 +378,25 @@
       },
       "seasons": [],
       "comments": []
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "amirQuf",
+      "email": "amirQuf@gmail.com",
+      "password": "amirQuf59"
+    },
+    {
+      "id": "a544",
+      "name": "amir",
+      "email": "amirparviziup@gmail.com",
+      "password": "شئهق4050"
+    },
+    {
+      "id": "0b3d",
+      "email": "amir@gmail.com",
+      "password": "aaaaa"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import { Link } from "react-router-dom";
 import useCourseStore from "../../../store/courseDatas";
 
@@ -17,4 +17,4 @@ const AboutTeacher = ({courseID}) => {
   );
 };
 
-export default AboutTeacher;
+export default memo(AboutTeacher);

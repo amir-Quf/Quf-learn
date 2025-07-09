@@ -18,7 +18,9 @@ const CourseDetails = () => {
   
   if(loading || !course){
     return (
-      <div>
+      <div className="container-loader">
+      <div className="loader">
+      </div>
         <h1>loading...</h1>
       </div>
     )

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { memo, useMemo } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import useCourseStore from '../../../store/courseDatas'
 import { FaLaptopCode, FaMoneyBillWave } from 'react-icons/fa6'
@@ -103,4 +103,4 @@ const AboutCourse = ({courseID}) => {
   )
 }
 
-export default AboutCourse
+export default memo(AboutCourse)

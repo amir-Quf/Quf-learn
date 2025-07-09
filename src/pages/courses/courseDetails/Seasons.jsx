@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { memo, useMemo } from "react";
 import useCourseStore from "../../../store/courseDatas";
 import { Accordion } from "react-bootstrap";
 import { IoMdPlayCircle } from "react-icons/io";
@@ -34,4 +34,4 @@ const Seasons = ({courseID}) => {
   );
 };
 
-export default Seasons;
+export default memo(Seasons);

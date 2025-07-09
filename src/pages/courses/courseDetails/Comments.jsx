@@ -1,6 +1,6 @@
 import { Col } from "react-bootstrap";
 import useCourseStore from "../../../store/courseDatas";
-import { useMemo } from "react";
+import { memo, useEffect, useMemo } from "react";
 import commentImg from '../../../assets/images/comment-image.png'
 import { PiArrowBendDoubleUpLeftFill } from "react-icons/pi";
 const Comments = ({courseID}) => {
@@ -8,7 +8,7 @@ const Comments = ({courseID}) => {
   const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
   return (
     <Col>
-      {course.comments.map((commentDetails) => {
+      { course.comments.map((commentDetails) => {
         return (
           <div className="containers comment">
             <div className="comment-title">
@@ -40,4 +40,4 @@ const Comments = ({courseID}) => {
   );
 };
 
-export default Comments;
+export default memo(Comments);

@@ -5,7 +5,7 @@ import { useFormik } from 'formik'
 import { Link, useNavigate } from 'react-router-dom'
 import fetchApi from '../../store/server'
 import Swal from 'sweetalert2'
-import registerSchema from '../../utils/register'
+import {registerSchemaLogin} from '../../utils/register'
 
 const Login = () => {
   const navigator = useNavigate()
@@ -17,24 +17,45 @@ const Login = () => {
         password: values.password,
       }
       try{
-        await fetchApi.get(`/users?username==${username}`)
-        .then(res => {
+        const res = await fetchApi.get('/users')
+        const users = res.data
+        const findUser = users.find(user => {
+        return ((user.username==loginUser.username ||
+          user.email == loginUser.username)&&
+        user.password==loginUser.password)
+      })
+        if(findUser){
+          localStorage.setItem('user',JSON.stringify(findUser))
+          Swal.fire({
+            title: 'Login was successfully',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1500
+          })
           navigator('/')
-        })
+        }else {
+          Swal.fire({
+            title: 'userName or password wrong',
+            icon: 'error',
+            timer: 1500,
+            showConfirmButton: false
+          })
+          
+        }
         resetForm()
       } catch (err){
         Swal.fire({
-          title: 'userName or password wrong',
-          icon: 'error',
-          timer: 1500,
-          showConfirmButton: false
-        })
-        resetForm()
+            title: 'error to get data at dataBase',
+            icon: 'error',
+            timer: 1500,
+            showConfirmButton: false
+          })
+        
       } finally {
         setSubmitting(false)
       }
     },
-    validationSchema: registerSchema,
+    validationSchema: registerSchemaLogin,
   })
   return (
     <div>
