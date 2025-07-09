@@ -16,6 +16,7 @@ const Register = () => {
         username: values.name,
         email: values.email,
         password: values.password,
+        role: 'user',
       }
       try{
         const isUserToDB = await fetchApi.get('/users')
@@ -64,6 +65,7 @@ const Register = () => {
   return (
     <div>
       <MyNavbar/>
+        <div className="container-login-page">
       <Container className='container-login'>
         <form className='form-login' onSubmit={form.handleSubmit}>
           <input value={form.values.username} onBlur={form.handleBlur} onChange={form.handleChange} name='username' type="text" placeholder='Enter your username...'/>
@@ -78,6 +80,7 @@ const Register = () => {
           <p>you have an account ? <Link to='/login'> login</Link> </p>
         </form>
       </Container>
+        </div>
     </div>
   )
 }

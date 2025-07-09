@@ -35,6 +35,11 @@
     margin: 20px 10px;
 }
 
+.my-navbar button{
+    background-color: transparent;
+    border: none;
+}
+
 
 @media screen and (max-width : 800px){
         .offcanvas-links{

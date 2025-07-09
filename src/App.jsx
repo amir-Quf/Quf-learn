@@ -13,6 +13,8 @@ import Profile from './pages/profile/Profile';
 import Register from './pages/register/Register';
 import UserComments from './pages/userComments/UserComments';
 import ForgotPassword from './pages/login/forgotPassword/ForgotPassword';
+import PrivateRoute from './routes/PrivateRoute';
+import AdminRoute from './routes/AdminRoute';
 
 const App = () => {
   return (
@@ -21,15 +23,38 @@ const App = () => {
       <Route path='/login' element={<Login/>}/>
       <Route path='/login/forgot-password' element={<ForgotPassword/>}/>
       <Route path='/register' element={<Register/>}/>
-      <Route path='/profile' element={<Profile/>}/>
       <Route path='/courses/' element={<Courses/>}/>
       <Route path='/courses/:courseId' element={<CourseDetails/>}/>
-      <Route path='/dashboard' element={<Dashboard/>}/>
-      <Route path='/dashboard/my-courses' element={<UserCourses/>}/>
-      <Route path='/dashboard/my-comments' element={<UserComments/>}/>
-      <Route path='/admin' element={<AdminDashboard/>}/>
-      <Route path='/admin/analytics' element={<AdminAnalytics/>}/>
-      <Route path='/admin/courses' element={<AdminCourseManagement/>}/>
+      <Route path='/dashboard' element={
+        <PrivateRoute>
+          <Dashboard/>
+        </PrivateRoute>
+        }/>
+      <Route path='/my-courses' element={
+        <PrivateRoute>
+          <UserCourses/>
+        </PrivateRoute>
+        }/>
+      <Route path='/dashboard/my-comments' element={
+        <PrivateRoute>
+          <UserComments/>
+        </PrivateRoute>
+        }/>
+      <Route path='/admin' element={
+        <AdminRoute>
+          <AdminDashboard/>
+        </AdminRoute>
+        }/>
+      <Route path='/admin/analytics' element={
+        <AdminRoute>
+          <AdminAnalytics/>
+        </AdminRoute>
+        }/>
+      <Route path='/admin/courses' element={
+        <AdminRoute>
+          <AdminCourseManagement/>
+        </AdminRoute>
+        }/>
     </Routes>
   );
 };

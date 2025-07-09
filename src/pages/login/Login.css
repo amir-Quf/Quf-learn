@@ -1,3 +1,8 @@
+.container-login-page{
+    background-image: url('../../assets/images/bg2.jpeg') !important;
+    background-size: cover;
+}
+
 .container-login{
     display: flex;
     align-items: center;

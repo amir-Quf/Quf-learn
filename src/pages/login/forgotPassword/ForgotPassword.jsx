@@ -46,6 +46,7 @@ const ForgotPassword = () => {
   return (
     <div>
       <MyNavbar/>
+      <div className="container-login-page">
       <Container className='container-login'>
         <form className='form-login' onSubmit={form.handleSubmit} bindsubmit="">
           <input value={form.values.email} onBlur={form.handleBlur} onChange={form.handleChange} name='email' type="email" placeholder='Enter your email...'/>
@@ -55,6 +56,7 @@ const ForgotPassword = () => {
           <Link to='/login'>i have received my password</Link>
         </form>
       </Container>
+      </div>
     </div>
   )
 }

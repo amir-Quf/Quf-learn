@@ -385,18 +385,21 @@
       "id": 1,
       "username": "amirQuf",
       "email": "amirQuf@gmail.com",
-      "password": "amirQuf59"
+      "password": "amirQuf59",
+      "role": "admin"
     },
     {
       "id": "a544",
       "name": "amir",
       "email": "amirparviziup@gmail.com",
-      "password": "شئهق4050"
+      "password": "شئهق4050",
+      "role": "user"
     },
     {
       "id": "0b3d",
       "email": "amir@gmail.com",
-      "password": "aaaaa"
+      "password": "aaaaa",
+      "role": "user"
     }
   ]
 }

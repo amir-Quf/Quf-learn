@@ -6,9 +6,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import fetchApi from '../../store/server'
 import Swal from 'sweetalert2'
 import {registerSchemaLogin} from '../../utils/register'
+import useAuthStore from '../../store/authStore'
 
 const Login = () => {
   const navigator = useNavigate()
+  const login = useAuthStore(s => s.login)
   const form = useFormik({
     initialValues: {username:'', password: ''},
     onSubmit: async (values, {resetForm, setSubmitting}) => {
@@ -25,7 +27,7 @@ const Login = () => {
         user.password==loginUser.password)
       })
         if(findUser){
-          localStorage.setItem('user',JSON.stringify(findUser))
+          login(findUser)
           Swal.fire({
             title: 'Login was successfully',
             icon: 'success',
@@ -60,6 +62,7 @@ const Login = () => {
   return (
     <div>
       <MyNavbar/>
+      <div className="container-login-page">
       <Container className='container-login'>
         <form className='form-login' onSubmit={form.handleSubmit}>
           <input value={form.values.username} onBlur={form.handleBlur} onChange={form.handleChange} name='username' type="text" placeholder='Enter your username or email...'/>
@@ -71,6 +74,7 @@ const Login = () => {
           <Link to='/login/forgot-password'>forgot a password</Link>
         </form>
       </Container>
+      </div>
     </div>
   )
 }

@@ -11,10 +11,21 @@ import useCourseStore from "../../store/courseDatas";
 const Home = () => {
   // const [courses, setCourses] = useState([]);
   const fetchCourses = useCourseStore(state => state.fetchCourses)
+  const loading = useCourseStore(state => state.loading)
   useEffect(() => {
     fetchCourses()
   }, [fetchCourses])
   const courses = useCourseStore(state => state.courses)
+  if(loading){
+    return(
+      <div className="container-loader">
+        <div className="loader">
+          <h1>Loading...</h1>
+        </div>
+      </div>
+    )
+  }else{
+
   
   return (
     <>
@@ -81,7 +92,8 @@ const Home = () => {
       </div>
       <Footer/>
     </>
-  );
+  )
+}
 };
 
 export default Home;
