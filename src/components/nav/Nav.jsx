@@ -3,11 +3,14 @@ import './Nav.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuthStore from '../../store/authStore';
+import { memo } from 'react';
 
 function MyNavbar() {
-  const { isLoggedIn, logout, user } = useAuthStore()
+  // const { logout } = useAuthStore(state => state.logout)
+  const { getRole, logout, isAdmin } = useAuthStore()
+  
     const expand = 'lg'
   return (
     <Navbar key={expand} expand={expand} className=" my-navbar mb-3">
@@ -28,9 +31,10 @@ function MyNavbar() {
               <Offcanvas.Body className='offcanvas-links'>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <NavLink className='navbar-link' to={'/'}>Home</NavLink>
-                  {isLoggedIn ? <NavLink className='navbar-link' to='/dashboard'>Profile</NavLink>: ''}
-                  {isLoggedIn ? <NavLink className='navbar-link' to='/my-courses'>MyCourses</NavLink>: ''}
-                  {isLoggedIn? <button className='navbar-link' to='' end>LogUot</button> :
+                  {isAdmin() ? <NavLink className='navbar-link' to='/admin'>Dashboard</NavLink> : ''}
+                  {getRole() === 'user' ? <NavLink className='navbar-link' to='/dashboard'>Profile</NavLink>: ''}
+                  {getRole() === 'user' ? <NavLink className='navbar-link' to='/my-courses'>MyCourses</NavLink>: ''}
+                  {getRole() === 'user' || isAdmin() ? <Link onClick={() => logout()} className='navbar-link' to='/'>LogUot</Link> : 
                   <NavLink className='navbar-link' to='/login'>LogIn</NavLink>}
                 </Nav>
               </Offcanvas.Body>
@@ -40,4 +44,4 @@ function MyNavbar() {
   );
 }
 
-export default MyNavbar;
+export default memo(MyNavbar);

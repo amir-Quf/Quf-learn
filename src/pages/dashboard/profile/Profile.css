@@ -1,0 +1,100 @@
+.profile-container{
+    background-color: var(--bg-primary);
+    box-shadow: 0 0 5px 3px #ccc;
+    padding: 20px;
+}
+
+.profile-container img{
+    background-color: transparent !important;
+    border-radius: 50%;
+    margin-left: 40px;
+}
+
+.form-update-profile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-update-profile input{
+    width: 500px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    outline: #ccc !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.form-update-profile input:focus{
+    outline: none;
+    box-shadow: 0 0 5px 3px #ccc;
+}
+
+.password-container-profile{
+    background-color: var(--primary-color);
+    width: 500px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.password-container-profile:has(input:focus){
+    box-shadow: 0 0 5px 3px #ccc !important;
+}
+
+.password-container-profile input{
+    padding: 0 !important;
+}
+
+.password-container-profile input:focus{
+    box-shadow: none !important;
+}
+
+.password-container-profile svg{
+    font-size: 25px;
+}
+
+.form-update-profile textarea{
+    all: unset;
+    background-color: var(--primary-color);
+    width: 480px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form-update-profile textarea:focus{
+    outline: none;
+    box-shadow: 0 0 5px 3px #ccc;
+
+}
+
+.btns-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-update-profile button{
+    all: unset;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 600;
+    transition: all 0.25s ease-in-out;
+}
+
+.form-update-profile button:hover{
+    background-color: var(--hover-color);
+}
+
+.delete-account-btn{
+    background-color: #ff000d !important;
+}
+
+.delete-account-btn:hover{
+    background-color: var(--bg-secondary) !important;
+}

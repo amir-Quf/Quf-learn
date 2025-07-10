@@ -1,14 +1,52 @@
-import React, { memo, useMemo } from 'react'
+import React, { memo, useEffect, useMemo, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import useCourseStore from '../../../store/courseDatas'
 import { FaLaptopCode, FaMoneyBillWave } from 'react-icons/fa6'
 import { MdOutlineDateRange } from 'react-icons/md'
 import { IoInformationCircleOutline } from 'react-icons/io5'
 import { IoMdTimer } from 'react-icons/io'
+import useAuthStore from '../../../store/authStore'
+import fetchApi from '../../../store/server'
+import Swal from 'sweetalert2'
 
 const AboutCourse = ({courseID}) => {
-    const getCourseById = useCourseStore(state => state.getCourseById)
+    const getCourseById = useCourseStore(s => s.getCourseById)
     const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
+    const { user } = useAuthStore()
+    const userCourses = useAuthStore((s) => s.user.enrolledUser)
+    const { updateData } = useAuthStore()
+    const [isRegisterUser , setIsRegisterUser] = useState(false)
+    useEffect(() => {
+       setIsRegisterUser(userCourses.includes(Number(courseID)))
+    },[userCourses, courseID])
+    const userId = useAuthStore((s) => s.user.id);
+    const buyCourseHandler = () => {
+      Swal.fire({
+          title: 'Do you want to participate in this course',
+          icon: 'question',
+          showCancelButton: true
+        }).then( async (res) => {
+          if(res.isConfirmed){
+            const res = await fetchApi.put(`/users/${userId}`,{...user, enrolledUser: [...user.enrolledUser ,+(courseID)]})
+            try{
+              Swal.fire({
+                title: 'You enrolled in this course',
+                icon: 'success',
+                timer: 2000,
+                timerProgressBar : true,
+              })
+              updateData(res.data)
+            }catch (err){
+              Swal.fire({
+                title: 'registration was not successful',
+                icon: 'error',
+                timer: 2000,
+                timerProgressBar : true,
+              })
+            }
+          }
+        })
+    }
   return (
     <Row>
       <Row className="course-Details-container">
@@ -39,17 +77,15 @@ const AboutCourse = ({courseID}) => {
                             {course.price}
                           </p>
                           <p className="price-of-course">
-                            ${course.price - course.discount}
+                            ${(course.price - course.discount).toFixed(2)}
                           </p>
                         </div>
                       ) : (
                         <p className="price-of-course">${course.price}</p>
                       )}
                     </div>
-                    <button>
-                      {" "}
-                      Participate in the course <FaMoneyBillWave />
-                    </button>
+                    {isRegisterUser ? <div className='buy-box'>You are student of this course</div> : 
+                    <button onClick={buyCourseHandler}>Participate in the course <FaMoneyBillWave /></button>}
                   </div>
                 </Col>
               </Row>

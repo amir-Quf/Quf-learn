@@ -1,10 +1,17 @@
-import React, { memo, useMemo } from "react";
+import React, { memo, useEffect, useMemo, useState } from "react";
 import useCourseStore from "../../../store/courseDatas";
 import { Accordion } from "react-bootstrap";
 import { IoMdPlayCircle } from "react-icons/io";
+import { FaLock } from "react-icons/fa";
+import useAuthStore from "../../../store/authStore";
 const Seasons = ({courseID}) => {
     const getCourseById = useCourseStore(state => state.getCourseById)
     const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
+    const userCourses = useAuthStore((s) => s.user.enrolledUser)
+    const [isRegisterUser , setIsRegisterUser] = useState(false)
+     useEffect(() => {
+           setIsRegisterUser(userCourses.includes(Number(courseID)))
+        },[userCourses, courseID])
   return (
     <div className="containers education-container">
       <h4>Seasons : </h4>
@@ -16,9 +23,9 @@ const Seasons = ({courseID}) => {
               <Accordion.Body>
                 {season.sessions.map((session) => {
                   return (
-                    <div key={session.id} className="season-meeting-container">
+                    <div aria-disabled={isRegisterUser} key={session.id} className="season-meeting-container">
                       <div className="season-meeting-title-box">
-                        <IoMdPlayCircle />
+                       {isRegisterUser? <IoMdPlayCircle /> : <FaLock/>}
                         <h6>{session.title}</h6>
                       </div>
                       <p>{session.duration}</p>

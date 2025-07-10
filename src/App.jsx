@@ -8,8 +8,7 @@ import AdminDashboard from './pages/adminDashboard/AdminDashboard';
 import Courses from './pages/courses/Courses';
 import Dashboard from './pages/dashboard/Dashboard';
 import Login from './pages/login/Login';
-import UserCourses from './pages/userCourses/UserCourses';
-import Profile from './pages/profile/Profile';
+import UserCourses from './pages/dashboard/userCourses/UserCourses';
 import Register from './pages/register/Register';
 import UserComments from './pages/userComments/UserComments';
 import ForgotPassword from './pages/login/forgotPassword/ForgotPassword';
@@ -25,7 +24,7 @@ const App = () => {
       <Route path='/register' element={<Register/>}/>
       <Route path='/courses/' element={<Courses/>}/>
       <Route path='/courses/:courseId' element={<CourseDetails/>}/>
-      <Route path='/dashboard' element={
+      <Route path='/dashboard/' element={
         <PrivateRoute>
           <Dashboard/>
         </PrivateRoute>

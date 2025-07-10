@@ -79,6 +79,18 @@
     justify-content: space-between;
 }
 
+.buy-box{
+    border: none;
+    background-color: var(--tertiary-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    text-shadow: 0 0 3px ;
+    transition: all 0.25s ease-in-out;
+    margin-right: 50px;
+    cursor: auto;
+}
+
 .buy-course button{
     border: none;
     background-color: var(--tertiary-color);

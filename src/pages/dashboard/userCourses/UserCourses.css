@@ -1,0 +1,23 @@
+.user-courses{
+    background-color: var(--bg-primary);
+    padding: 30px 60px;
+}
+
+.course-container{
+    overflow: hidden !important;
+}
+
+.user-courses h2{
+    margin-bottom: 40px;
+}
+
+.title-course-details{
+    font-weight: 600;
+}
+
+.abut-course{
+    display: inline-block;
+    text-wrap: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}

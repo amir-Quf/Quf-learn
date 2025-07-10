@@ -117,7 +117,7 @@
 .title-course{
     text-wrap: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis !important;
 }
 
 .link-course{

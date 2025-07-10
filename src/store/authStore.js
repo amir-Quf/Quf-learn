@@ -1,21 +1,37 @@
 import { create } from "zustand";
 
 const useAuthStore = create((set, get) => ({
+    hiddenPassword : true,
+    confirmHiddenPassword: true,
     user: JSON.parse(localStorage.getItem('user'))||null,
-    isLoggedIn:(!!get().user),
+    isLoggedIn:(!!localStorage.getItem('user')),
     login: (userData) => {
         localStorage.setItem('user',JSON.stringify(userData))
         set({user: userData, isLoggedIn: true})
     },
-    loguot: () => {
+    logout: () => {
         localStorage.removeItem('user')
         set({user: null, isLoggedIn: false})
     },
     isAdmin: () => {
-        return get().user?.role === 'admin'
+        const user = JSON.parse(localStorage.getItem('user'))
+        return (user?.role === 'admin')
     },
     getRole: () => {
-        return get().user?.role || null
+        const user = JSON.parse(localStorage.getItem('user'))
+        return (user?.role || null)
+    },
+    changeHiddenPassword: () => {
+        const toggle = !(get().hiddenPassword)
+        set({hiddenPassword : toggle})
+    },
+    changeConfirmHiddenPassword: () => {
+        const toggle = !(get().confirmHiddenPassword)
+        set({confirmHiddenPassword : toggle})
+    },
+    updateData: (userData) => {
+        const updateUserData = localStorage.setItem('user', JSON.stringify(userData))
+        set({user : JSON.parse(localStorage.getItem('user'))})
     }
 }))
 

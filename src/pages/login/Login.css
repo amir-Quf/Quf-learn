@@ -27,11 +27,39 @@
     border-radius: 5px;
     padding: 10px;
     width: 300px;
+    background-color: var(--primary-color);
 }
 
 .form-login input:focus{
     outline: none;
     box-shadow: 0 0 5px 3px #ccc;
+}
+
+.password-container{
+    background-color: var(--primary-color);
+    width: 300px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.password-container:has(input:focus){
+    box-shadow: 0 0 5px 3px #ccc !important;
+}
+
+.password-container input{
+    /* background-color: var(--primary-color) !important; */
+    padding: 0 !important;
+}
+
+.password-container input:focus{
+    box-shadow: none !important;
+}
+
+.password-container svg{
+    font-size: 25px;
 }
 
 .form-login button{

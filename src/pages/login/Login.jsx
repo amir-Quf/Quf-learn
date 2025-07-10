@@ -7,10 +7,12 @@ import fetchApi from '../../store/server'
 import Swal from 'sweetalert2'
 import {registerSchemaLogin} from '../../utils/register'
 import useAuthStore from '../../store/authStore'
+import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 const Login = () => {
   const navigator = useNavigate()
   const login = useAuthStore(s => s.login)
+  const { hiddenPassword, changeHiddenPassword} = useAuthStore()
   const form = useFormik({
     initialValues: {username:'', password: ''},
     onSubmit: async (values, {resetForm, setSubmitting}) => {
@@ -66,9 +68,12 @@ const Login = () => {
       <Container className='container-login'>
         <form className='form-login' onSubmit={form.handleSubmit}>
           <input value={form.values.username} onBlur={form.handleBlur} onChange={form.handleChange} name='username' type="text" placeholder='Enter your username or email...'/>
-          <p>{form.errors.username && form.touched.username && form.errors.username}</p>
-          <input value={form.values.password} onBlur={form.handleBlur} onChange={form.handleChange} name='password' type="password" placeholder='Enter your password...'/>
-          <p>{form.errors.password && form.touched.password && form.errors.password}</p>
+          <p className='error-input'>{form.errors.username && form.touched.username && form.errors.username}</p>
+        <div className='password-container'>
+          <input value={form.values.password} onBlur={form.handleBlur} onChange={form.handleChange} name='password' type={hiddenPassword ? "password" : 'text'} placeholder='Enter your password...'/>
+          {hiddenPassword? <IoIosEyeOff onClick={() => changeHiddenPassword()} /> : <IoIosEye onClick={() => changeHiddenPassword()} />}
+        </div>
+          <p className='error-input'>{form.errors.password && form.touched.password && form.errors.password}</p>
           <button type='submit' disabled={form.isSubmitting}>{form.isSubmitting ? 'sending...' : 'Login'}</button>
           <p>Don`t have an account ? <Link to='/register'> Register</Link> </p>
           <Link to='/login/forgot-password'>forgot a password</Link>
