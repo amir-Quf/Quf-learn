@@ -1,0 +1,124 @@
+.add-course-form{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 5px;
+    background-color: var(--bg-primary);
+    box-shadow: 0 0 5px 3px #ccc;
+}
+
+.add-course-form input{
+    width: 500px;
+    border-radius: 5px;
+    border: none;
+    transition: all .25s ease-in-out;
+    padding: 10px;
+}
+
+.add-course-form input:focus{
+    background-color: var(--secondary-color);
+    outline: none;
+}
+
+.add-course-form textarea{
+    all: unset;
+    width: 480px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+    height: 90px;
+}
+
+.add-course-form textarea:focus{
+    background-color: var(--secondary-color);
+}
+
+.dropdown-status-course{
+    background-color: var(--primary-color) !important;
+    width: 500px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    transition: all 0.25s ease-in-out;
+}
+
+.dropdown-status-course:focus{
+    background-color: var(--secondary-color) !important;
+    outline: none;
+}
+
+.dropdown-status-course option{
+    background-color: var(--primary-color) !important;
+}
+
+/* .dropdown-status-course option:enabled{
+    background-color: var(--secondary-color) !important;
+} */
+
+.seasons-course{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px 3px #ccc;
+    transition: all 0.25s ease-in-out;
+}
+
+.add-course-season{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 500px;
+    font-weight: 600;
+    transition: all 0.25s ease-in-out;
+}
+
+.session-course{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.25s ease-in-out;
+}
+
+.add-course-season:hover{
+    background-color: var(--secondary-color);
+}
+
+.add-course-btn{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: var(--tertiary-color);
+    transition: all .25s ease-in-out;
+    margin-right: 400px;
+    margin-top: 10px;
+}
+
+.add-course-btn:hover {
+    background-color: #06a16e;
+}
+
+@media screen and (max-width : 745px) {
+    .add-course-form{
+        align-items: start;
+    }
+    .add-course-form button{
+        margin: 0;
+    }
+    .add-course-form input{
+        width: 100%;
+    }
+}

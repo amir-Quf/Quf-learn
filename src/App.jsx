@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/home/Home';
 import AdminAnalytics from './pages/adminDashboard/adminAnalytics/AdminAnalytics';
-import AdminCourseManagement from './pages/adminDashboard/adminCourseManagement/AdminCourseManagement';
+import AdminCourseManagement from './pages/adminDashboard/adminCourseManagement/AdminCourses';
 import CourseDetails from './pages/courses/courseDetails/CourseDetails';
 import AdminDashboard from './pages/adminDashboard/AdminDashboard';
 import Courses from './pages/courses/Courses';
@@ -14,6 +14,7 @@ import UserComments from './pages/dashboard/userComments/UserComments';
 import ForgotPassword from './pages/login/forgotPassword/ForgotPassword';
 import PrivateRoute from './routes/PrivateRoute';
 import AdminRoute from './routes/AdminRoute';
+import AddCourse from './pages/adminDashboard/addCourse/AddCourse';
 
 const App = () => {
   return (
@@ -49,9 +50,9 @@ const App = () => {
           <AdminAnalytics/>
         </AdminRoute>
         }/>
-      <Route path='/admin/courses' element={
+      <Route path='/admin/add-course' element={
         <AdminRoute>
-          <AdminCourseManagement/>
+          <AddCourse/>
         </AdminRoute>
         }/>
     </Routes>

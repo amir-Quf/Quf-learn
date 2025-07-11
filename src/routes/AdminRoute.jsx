@@ -1,9 +1,9 @@
 import useAuthStore from "../store/authStore";
 import { Navigate } from "react-router-dom";
 
-const AdminRoute = ({Children}) => {
+const AdminRoute = ({children}) => {
     const {isAdmin} = useAuthStore()
-    return isAdmin() ? Children : <Navigate to='/'/>
+    return isAdmin() ? children : <Navigate to='/'/>
 }
 
 export default AdminRoute

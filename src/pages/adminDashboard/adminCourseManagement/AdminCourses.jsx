@@ -1,12 +1,11 @@
 import { Card, Col, Row } from "react-bootstrap";
-import "./UserCourses.css";
-import fetchApi from "../../../store/server";
-import { Link, useParams } from "react-router-dom";
+import "./AdminCourses.css";
+import { Link } from "react-router-dom";
 import useAuthStore from "../../../store/authStore";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useCourseStore from "../../../store/courseDatas";
 
-const UserCourses = () => {
+const AdminCourses = () => {
   const { courses } = useCourseStore();
   const userID = useAuthStore((s) => s.user.id);
   const userCourses = useAuthStore((s) => s.user.enrolledUser);
@@ -17,11 +16,17 @@ const UserCourses = () => {
     const filtered = courses.filter((course) =>
       userCourses.includes(Number(course.id))
     );
-    setAllCoursesUser(filtered)
-  }, [courses, userCourses])
+    setAllCoursesUser(filtered);
+  }, [courses, userCourses]);
+  console.log(allCoursesUser);
   return (
-    <Row className="mt-xxl-5 user-courses">
+    <Row className="admin-courses">
+      <Col className="add-course-box">
       <h2>Your Courses : </h2>
+      <Link to='/admin/add-course'>
+      <button>Add-Course</button>
+      </Link>
+      </Col>
       {userCourses ? (
         allCoursesUser.map((course) => {
           return (
@@ -51,4 +56,4 @@ const UserCourses = () => {
   );
 };
 
-export default UserCourses;
+export default AdminCourses;

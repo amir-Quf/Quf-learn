@@ -17,7 +17,7 @@ const UserComments = () => {
     })
     setCommentsUser(findComments)
     console.log(!!commentsUser.length)
-  },[])
+  },[courses,user])
   console.log(!!commentsUser.length)
   console.log(commentsUser.length)
   return (

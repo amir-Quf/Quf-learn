@@ -29,4 +29,27 @@ const registerSchemaReDataUser = Yup.object().shape({
     email: Yup.string().email('email is nit valid').required('this field is required'),
 })
 
-export {registerSchemaUser, registerSchemaComment, registerSchemaLogin, registerSchemaForgotPassword, registerSchemaReDataUser}
+const registerSchemaAddNewCourse = Yup.object().shape({
+    title: Yup.string().required(),
+    desc: Yup.string().min(10).required(),
+    price: Yup.number().required(),
+    discount: Yup.number().required(),
+    duration: Yup.string().min(5).required(),
+    prerequisites: Yup.string().required(),
+    status: Yup.string().required(),
+    info: Yup.string().min(40).required(),
+    img: Yup.string().required(),
+    seasons: Yup.array().of(
+    Yup.object().shape({
+      title: Yup.string().required('Season title is required'),
+      sessions: Yup.array().of(
+        Yup.object().shape({
+          title: Yup.string().required('Session title is required'),
+          duration: Yup.string().required('Session duration is required'),
+        })
+      ).min(1, 'At least one session is required')
+    })
+  ).min(1, 'At least one season is required'),
+})
+
+export {registerSchemaUser, registerSchemaComment, registerSchemaLogin, registerSchemaForgotPassword, registerSchemaReDataUser, registerSchemaAddNewCourse}
