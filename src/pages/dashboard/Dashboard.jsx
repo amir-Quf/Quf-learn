@@ -3,6 +3,8 @@ import MyNavbar from "../../components/nav/Nav";
 import "./Dashboard.css";
 import Profile from "./profile/Profile";
 import UserCourses from "./userCourses/UserCourses";
+import Footer from "../../components/footer/Footer";
+import UserComments from "./userComments/UserComments";
 
 const Dashboard = () => {
   
@@ -12,7 +14,9 @@ const Dashboard = () => {
       <Container style={{ marginTop: "80px" }}>
         <Profile/>
         <UserCourses/>
+        <UserComments/>
       </Container>
+      <Footer/>
     </div>
   );
 };

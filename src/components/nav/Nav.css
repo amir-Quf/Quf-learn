@@ -4,6 +4,7 @@
     top: 0;
     z-index: 5;
     background-color: var(--bg-secondary) !important;
+    box-shadow: 0 0 3px 1px #6e2828fd;
 }
 
 .title-navbar{

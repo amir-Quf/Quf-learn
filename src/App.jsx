@@ -10,7 +10,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Login from './pages/login/Login';
 import UserCourses from './pages/dashboard/userCourses/UserCourses';
 import Register from './pages/register/Register';
-import UserComments from './pages/userComments/UserComments';
+import UserComments from './pages/dashboard/userComments/UserComments';
 import ForgotPassword from './pages/login/forgotPassword/ForgotPassword';
 import PrivateRoute from './routes/PrivateRoute';
 import AdminRoute from './routes/AdminRoute';

@@ -26,16 +26,17 @@ const UserCourses = () => {
       {userCourses ? (
         allCoursesUser.map((course) => {
           return (
-            <Col className="course-container" xl={3} lg={4} md={6} sm={12}>
+            <Col key={course.id} className="course-container" xl={3} lg={4} md={6} sm={12}>
               <Card className="course-card">
                 <Card.Img variant="top" src={course.img} />
                 <Card.Body>
-                  <Card.Title className="abut-course">
+                  <Card.Title className="about-course">
                     {course.title}
                   </Card.Title>
-                  <Card.Text>
-                    <span className="title-course-details">about :</span> <span className="abut-course">{course.desc}</span>
-                  </Card.Text>
+                    <p className="title-course-details">duration : {course.time}</p>
+                    <p className="title-course-details">prerequisites : {course.prerequisites}</p>
+                    <p className="title-course-details">courseStatus : {course.courseStatus}</p>  
+                    <span className="title-course-details">about :</span> <p className="about-course">{course.desc}</p>
                   <Link className="link-course" to={`/courses/${course.id}`}>
                     <button className="btn-course">course info</button>
                   </Link>

@@ -1,6 +1,7 @@
 .user-courses{
     background-color: var(--bg-primary);
     padding: 30px 60px;
+    box-shadow: 0 0 5px 3px #ccc;
 }
 
 .course-container{
@@ -13,11 +14,12 @@
 
 .title-course-details{
     font-weight: 600;
+    margin: 0;
 }
 
-.abut-course{
-    display: inline-block;
+.about-course{
     text-wrap: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
+
