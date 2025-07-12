@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from 'react-router-dom';
 import useAuthStore from '../../store/authStore';
 import { memo } from 'react';
-
+import logoImg from '../../assets/images/Logo2.svg'
 function MyNavbar() {
   // const { logout } = useAuthStore(state => state.logout)
   const { getRole, logout, isAdmin } = useAuthStore()
@@ -15,6 +15,7 @@ function MyNavbar() {
   return (
     <Navbar key={expand} expand={expand} className=" my-navbar mb-3">
           <Container >
+            <img className='logo-brand' src={logoImg} alt=""/>
             <Navbar.Brand className='title-navbar' href="/">Quf Learn</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -31,6 +32,7 @@ function MyNavbar() {
               <Offcanvas.Body className='offcanvas-links'>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <NavLink className='navbar-link' to={'/'}>Home</NavLink>
+                  <NavLink className='navbar-link' to={'/about'}>About</NavLink>
                   {isAdmin() ? <NavLink className='navbar-link' to='/admin'>Dashboard</NavLink> : ''}
                   {getRole() === 'user' ? <NavLink className='navbar-link' to='/dashboard'>Profile</NavLink>: ''}
                   {getRole() === 'user' ? <NavLink className='navbar-link' to='/my-courses'>MyCourses</NavLink>: ''}

@@ -1,0 +1,51 @@
+
+.about-hero {
+  background-color: var(--secondary-color);
+  padding: 60px 20px;
+  text-align: center;
+  color: #222;
+  border-end-start-radius: 100px;
+  border-end-end-radius: 100px;
+  margin: 0 !important;
+}
+
+.about-hero-container{
+    margin-top: 40px !important;
+}
+
+.about-hero h1{
+    margin-top: 20px;
+}
+
+.about-section {
+    padding: 0 !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.about-section img{
+    height: 300px;
+    border-radius: 5px !important;
+    padding: 10px;
+}
+
+.about-feature-card {
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.about-team-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.stats-section h2 {
+  font-size: 2.2rem;
+  color: var(--secondary-color);
+}

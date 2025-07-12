@@ -16,6 +16,7 @@ import PrivateRoute from './routes/PrivateRoute';
 import AdminRoute from './routes/AdminRoute';
 import AddCourse from './pages/adminDashboard/addCourse/AddCourse';
 import EditCourse from './pages/adminDashboard/editCourse/EditCourse';
+import About from './pages/about/About';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
       <Route path='/register' element={<Register/>}/>
       <Route path='/courses/' element={<Courses/>}/>
       <Route path='/courses/:courseId' element={<CourseDetails/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path='/dashboard/' element={
         <PrivateRoute>
           <Dashboard/>
