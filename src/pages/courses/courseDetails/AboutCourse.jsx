@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 
 const AboutCourse = ({courseID}) => {
     const getCourseById = useCourseStore(s => s.getCourseById)
+    const {fetchCourses} = useCourseStore()
     const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
     const { user } = useAuthStore()
     const userCourses = useAuthStore((s) => s.user.enrolledUser)
@@ -36,6 +37,14 @@ const AboutCourse = ({courseID}) => {
                 timerProgressBar : true,
               })
               updateData(res.data)
+              const addNewStudent = fetchApi.put(`/coursesList/${courseID}`, {...course, students: [...course.students, {id: user.id, username: user.username, email: user.email}]})
+              try{
+                fetchCourses()
+              }catch (err) {
+                console.log(err);
+                
+              }
+
             }catch (err){
               Swal.fire({
                 title: 'registration was not successful',

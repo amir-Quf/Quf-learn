@@ -15,6 +15,7 @@ import ForgotPassword from './pages/login/forgotPassword/ForgotPassword';
 import PrivateRoute from './routes/PrivateRoute';
 import AdminRoute from './routes/AdminRoute';
 import AddCourse from './pages/adminDashboard/addCourse/AddCourse';
+import EditCourse from './pages/adminDashboard/editCourse/EditCourse';
 
 const App = () => {
   return (
@@ -53,6 +54,11 @@ const App = () => {
       <Route path='/admin/add-course' element={
         <AdminRoute>
           <AddCourse/>
+        </AdminRoute>
+        }/>
+        <Route path='/admin/edit-course/:courseId' element={
+        <AdminRoute>
+          <EditCourse/>
         </AdminRoute>
         }/>
     </Routes>

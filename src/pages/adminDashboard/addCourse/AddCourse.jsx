@@ -11,7 +11,7 @@ import { registerSchemaAddNewCourse } from '../../../utils/register'
 
 const AddCourse = () => {
   const { courses,fetchCourses } = useCourseStore()
-  const { user } = useAuthStore()
+  const { user, updateData } = useAuthStore()
   const navigator = useNavigate()
   const formik = useFormik({
     initialValues: {
@@ -40,7 +40,7 @@ const AddCourse = () => {
       const date = now.getDate()
 
       const newCourse = {
-        id: courses.length + 1,
+        id: String(courses.length + 1),
         title: values.title,
         desc: values.desc,
         price: values.price,
@@ -52,12 +52,13 @@ const AddCourse = () => {
         courseInfo: values.info,
         img: values.img,
         teacher: {
-          name: user.name,
+          name: user.username,
           img: user.img,
           bio: user.desc
         },
         seasons: values.seasons,
-        comments: []
+        comments: [],
+        students: []
       }
 
       const res = await fetchApi.post('/coursesList', newCourse)
@@ -66,8 +67,14 @@ const AddCourse = () => {
           title: 'the course was successFully added',
           icon: 'success',
         })
-        navigator('/admin')
         fetchCourses()
+        const updated = fetchApi.put(`/users/${user.id}`, {...user, courses: [...user.courses, Number(newCourse.id)]})
+        try{
+          updateData({...user, courses: [...user.courses, Number(newCourse.id)]})
+        }catch (err) {
+          
+        }
+        navigator('/admin')
       }catch (err) {
         Swal.fire({
           title: 'there was an error adding the course',

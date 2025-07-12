@@ -30,7 +30,7 @@ const useAuthStore = create((set, get) => ({
         set({confirmHiddenPassword : toggle})
     },
     updateData: (userData) => {
-        const updateUserData = localStorage.setItem('user', JSON.stringify(userData))
+        localStorage.setItem('user', JSON.stringify(userData))
         set({user : JSON.parse(localStorage.getItem('user'))})
     }
 }))

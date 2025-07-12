@@ -65,7 +65,8 @@
             }
           ]
         }
-      ]
+      ],
+      "students": []
     },
     {
       "id": "2",
@@ -110,7 +111,8 @@
           "date": "2025-07-09",
           "responses": []
         }
-      ]
+      ],
+      "students": []
     },
     {
       "id": "3",
@@ -158,7 +160,8 @@
           ]
         }
       ],
-      "comments": []
+      "comments": [],
+      "students": []
     },
     {
       "id": "4",
@@ -167,15 +170,15 @@
       "price": 150.79,
       "discount": 25,
       "time": "120 hour",
-      "lastUpdate": "2024/5/12",
+      "lastUpdate": "2025/7/12",
       "prerequisites": "JS",
       "courseStatus": "In holding",
       "courseInfo": "Dive into server-side development with Node.js, a fast, scalable runtime for building real-time applications. This course covers the fundamentals of asynchronous JavaScript, modules, and npm. You’ll learn how to create RESTful APIs using Express, connect to databases like MongoDB or PostgreSQL, implement authentication with JWT, and handle middleware for validation, error handling, and security. You'll also explore file uploads, environment configuration, and deploying applications to production using services like Vercel or Railway. By the end of this course, you’ll be able to create a fully functional backend server integrated with any frontend technology.",
       "img": "/src/assets/images/nodeJs.jpeg",
       "teacher": {
-        "name": "Shayan Gholami",
-        "img": "/images/teachers/shayan.jpg",
-        "bio": "Full-stack developer specialized in scalable backend systems."
+        "name": "amirQuf",
+        "img": "",
+        "bio": ""
       },
       "seasons": [
         {
@@ -193,9 +196,25 @@
               "duration": "20:00"
             }
           ]
+        },
+        {
+          "title": "express.JS",
+          "sessions": [
+            {
+              "title": "installig express.js",
+              "duration": "8:04"
+            }
+          ]
         }
       ],
-      "comments": []
+      "comments": [],
+      "students": [
+        {
+          "id": 1,
+          "name": "ali",
+          "email": "ali@email.com"
+        }
+      ]
     },
     {
       "id": "5",
@@ -241,7 +260,8 @@
           "date": "2025-07-09",
           "responses": []
         }
-      ]
+      ],
+      "students": []
     },
     {
       "id": "6",
@@ -269,7 +289,8 @@
           "date": "2025-07-08",
           "responses": []
         }
-      ]
+      ],
+      "students": []
     },
     {
       "id": "7",
@@ -297,7 +318,8 @@
           "date": "2025-07-08",
           "responses": []
         }
-      ]
+      ],
+      "students": []
     },
     {
       "id": "8",
@@ -317,7 +339,8 @@
         "bio": "DevOps specialist and GitHub power user helping developers collaborate better."
       },
       "seasons": [],
-      "comments": []
+      "comments": [],
+      "students": []
     },
     {
       "id": "9",
@@ -337,7 +360,8 @@
         "bio": "CSS specialist with strong background in scalable design systems."
       },
       "seasons": [],
-      "comments": []
+      "comments": [],
+      "students": []
     },
     {
       "id": "10",
@@ -357,7 +381,8 @@
         "bio": "Beginner-level instructor passionate about teaching web basics."
       },
       "seasons": [],
-      "comments": []
+      "comments": [],
+      "students": []
     },
     {
       "id": "11",
@@ -377,19 +402,17 @@
         "bio": "Layout design specialist and Flexbox expert helping devs structure UI effectively."
       },
       "seasons": [],
-      "comments": []
+      "comments": [],
+      "students": []
     }
   ],
   "users": [
     {
-      "id": 1,
       "username": "amirQuf",
-      "email": "amirQuf@gmail.com",
       "password": "amirQuf59",
-      "img": "",
-      "role": "admin",
+      "email": "amirQuf@gmail.com",
       "desc": "",
-      "enrolledUser": []
+      "id": "1"
     },
     {
       "id": "a544",
@@ -398,7 +421,10 @@
       "password": "amir2310",
       "role": "user",
       "desc": "",
-      "enrolledUser": []
+      "enrolledUser": [
+        4,
+        6
+      ]
     },
     {
       "username": "ali",

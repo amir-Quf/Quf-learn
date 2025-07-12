@@ -1,4 +1,4 @@
-.add-course-form{
+.edit-course-form{
     display: flex ;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
     box-shadow: 0 0 5px 3px #ccc;
 }
 
-.add-course-form input{
+.edit-course-form input{
     width: 500px;
     border-radius: 5px;
     border: none;
@@ -18,12 +18,12 @@
     padding: 10px;
 }
 
-.add-course-form input:focus{
+.edit-course-form input:focus{
     background-color: var(--secondary-color);
     outline: none;
 }
 
-.add-course-form textarea{
+.edit-course-form textarea{
     all: unset;
     width: 480px;
     background-color: #fff;
@@ -33,7 +33,7 @@
     height: 90px;
 }
 
-.add-course-form textarea:focus{
+.edit-course-form textarea:focus{
     background-color: var(--secondary-color);
 }
 
@@ -73,7 +73,7 @@
     transition: all 0.25s ease-in-out;
 }
 
-.add-course-season{
+.edit-course-season{
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -92,35 +92,54 @@
     transition: all 0.25s ease-in-out;
 }
 
-.add-course-season:hover{
+.edit-course-season:hover{
     background-color: var(--secondary-color);
 }
 
-.add-course-btn{
+.edit-course-btn{
     padding: 10px;
     border: none;
     border-radius: 5px;
     font-weight: 600;
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
     transition: all .25s ease-in-out;
-    margin-right: 400px;
-    margin-top: 10px;
 }
 
-.add-course-btn:hover {
-    background-color: #06a16e;
+.edit-course-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.delete-course-btn{
+    background-color: #f01818;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all .25s ease-in-out;
+}
+
+.delete-course-btn:hover{
+    background-color: #b30909;
+}
+
+.crud-btns{
+    margin-top: 10px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @media screen and (max-width : 745px) {
-    .add-course-form{
+    .edit-course-form{
         align-items: start;
     }
 
-    .add-course-form textarea{
+    .edit-course-form textarea{
         width: 95%;
     }
 
-    .add-course-form select{
+    .edit-course-form select{
         width: 100%;
     }
 
@@ -128,7 +147,7 @@
         width: 100%;
     }
     
-    .add-course-season{
+    .edit-course-season{
         width: 100%;
     }
 
@@ -136,10 +155,10 @@
         width: 100%;
     }
 
-    .add-course-form button{
+    .edit-course-form button{
         margin: 0;
     }
-    .add-course-form input{
+    .edit-course-form input{
         width: 100%;
     }
 }

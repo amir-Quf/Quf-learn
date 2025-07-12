@@ -20,8 +20,8 @@ const Home = () => {
     return(
       <div className="container-loader">
         <div className="loader">
-          <h1>Loading...</h1>
         </div>
+          <h1>Loading...</h1>
       </div>
     )
   }else{

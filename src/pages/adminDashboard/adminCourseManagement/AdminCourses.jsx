@@ -4,24 +4,24 @@ import { Link } from "react-router-dom";
 import useAuthStore from "../../../store/authStore";
 import { useEffect, useState } from "react";
 import useCourseStore from "../../../store/courseDatas";
+import fetchApi from "../../../store/server";
 
 const AdminCourses = () => {
   const { courses } = useCourseStore();
-  const userID = useAuthStore((s) => s.user.id);
-  const userCourses = useAuthStore((s) => s.user.enrolledUser);
+  const userCourses = useAuthStore((s) => s.user.courses);
   const [allCoursesUser, setAllCoursesUser] = useState([]);
+  
   useEffect(() => {
     if (!userCourses || !courses || courses.length === 0) return;
 
     const filtered = courses.filter((course) =>
-      userCourses.includes(Number(course.id))
+      userCourses.includes(Number(course.id) || course.id)
     );
     setAllCoursesUser(filtered);
   }, [courses, userCourses]);
-  console.log(allCoursesUser);
   return (
     <Row className="admin-courses">
-      <Col className="add-course-box">
+      <Col sm={12} className="add-course-box">
       <h2>Your Courses : </h2>
       <Link to='/admin/add-course'>
       <button>Add-Course</button>
@@ -38,11 +38,11 @@ const AdminCourses = () => {
                     {course.title}
                   </Card.Title>
                     <p className="title-course-details">duration : {course.time}</p>
-                    <p className="title-course-details">prerequisites : {course.prerequisites}</p>
-                    <p className="title-course-details">courseStatus : {course.courseStatus}</p>  
+                    <p className="title-course-details">courseStatus : {course.courseStatus}</p>
+                    <p className="title-course-details">Students : {(course.students).length}</p>
                     <span className="title-course-details">about :</span> <p className="about-course">{course.desc}</p>
-                  <Link className="link-course" to={`/courses/${course.id}`}>
-                    <button className="btn-course">course info</button>
+                  <Link className="link-course" to={`/admin/edit-course/${course.id}`}>
+                    <button className="btn-course">Edit Course</button>
                   </Link>
                 </Card.Body>
               </Card>
