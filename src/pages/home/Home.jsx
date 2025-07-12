@@ -1,21 +1,28 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import MyNavbar from "../../components/nav/Nav";
 import "./Home.css";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Footer from "../../components/footer/Footer";
 import fetchApi from "../../store/server";
 import useCourseStore from "../../store/courseDatas";
+import useSearchStore from "../../store/searchStore";
 
 const Home = () => {
-  // const [courses, setCourses] = useState([]);
+  const navigator = useNavigate()
+  const inputRef = useRef()
+  const {wordSearch, setWordSearch} = useSearchStore()
   const fetchCourses = useCourseStore(state => state.fetchCourses)
   const loading = useCourseStore(state => state.loading)
   useEffect(() => {
     fetchCourses()
   }, [fetchCourses])
   const courses = useCourseStore(state => state.courses)
+  const searchCourseHandler = () => {
+    setWordSearch((inputRef.current.value).toLowerCase())
+    navigator('/courses')
+  }
   if(loading){
     return(
       <div className="container-loader">
@@ -37,11 +44,12 @@ const Home = () => {
             <h1 className="title-site">Quf Learn</h1>
             <div className="search-course-container">
               <input
+                ref={inputRef}
                 className="search-course-input"
                 type="text"
                 placeholder="Search Course..."
               />
-              <button className="search-course-btn">
+              <button onClick={searchCourseHandler} className="search-course-btn">
                 <FaMagnifyingGlass />
               </button>
             </div>

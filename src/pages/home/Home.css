@@ -67,9 +67,6 @@
     border-radius: 10px;
     background-color: var(--primary-color);
     overflow: hidden;
-}
-
-.search-course-container{
     box-shadow: 0 0 5px 3px #ccc;
 }
 
