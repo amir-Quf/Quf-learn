@@ -4,16 +4,17 @@ import { Accordion } from "react-bootstrap";
 import { IoMdPlayCircle } from "react-icons/io";
 import { FaLock } from "react-icons/fa";
 import useAuthStore from "../../../store/authStore";
+import { motion } from "motion/react";
 const Seasons = ({courseID}) => {
     const getCourseById = useCourseStore(state => state.getCourseById)
     const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
-    const userCourses = useAuthStore((s) => s.user.enrolledUser)
+    const userCourses = useAuthStore((s) => s.user?.enrolledUser || '')
     const [isRegisterUser , setIsRegisterUser] = useState(false)
      useEffect(() => {
            setIsRegisterUser(userCourses.includes(Number(courseID)))
         },[userCourses, courseID])
   return (
-    <div className="containers education-container">
+    <motion.div whileHover={{scale: 1.1}} className="containers education-container">
       <h4>Seasons : </h4>
       {course.seasons.map((season) => {
         return (
@@ -37,7 +38,7 @@ const Seasons = ({courseID}) => {
           </Accordion>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
 

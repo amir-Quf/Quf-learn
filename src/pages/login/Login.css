@@ -67,8 +67,7 @@
     border-radius: 5px;
     padding: 10px;
     width: 200px;
-    background-color: var(--secondary-color);
-    transition: all 0.25s ease-in-out;
+    background-color: var(--secondary-color);;
 }
 
 .form-login button:hover{
@@ -82,7 +81,6 @@
 .form-login a{
     text-decoration: none;
     color: var(--secondary-color);
-    transition: all 0.25s ease-in-out;
     font-weight: 700;
 }
 

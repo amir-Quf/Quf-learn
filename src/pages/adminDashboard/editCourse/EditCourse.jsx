@@ -10,6 +10,8 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { registerSchemaAddNewCourse } from "../../../utils/register";
 import { useEffect, useState } from "react";
+import PageWrapper from "../../../components/pageWrapper";
+import { motion } from "motion/react";
 const EditCourse = () => {
   const courseID = useParams().courseId;
   const [initialValues, setInitialValues] = useState(null);
@@ -171,11 +173,11 @@ const deleteCourseHandler = () => {
     );
   } else {
     return (
-      <div>
+      <PageWrapper>
         <MyNavbar />
         <Container style={{ marginTop: "80px" }}>
-          <form className="edit-course-form" onSubmit={formik.handleSubmit}>
-            <input
+          <motion.form initial={{scale: 0.9}} whileHover={{scale: 1}} className="edit-course-form" onSubmit={formik.handleSubmit}>
+            <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="title"
               placeholder="Course Title"
               value={formik.values.title}
@@ -187,7 +189,7 @@ const deleteCourseHandler = () => {
                 formik.touched.title &&
                 formik.errors.title}
             </p>
-            <input
+            <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="desc"
               placeholder="Course Description"
               value={formik.values.desc}
@@ -197,7 +199,7 @@ const deleteCourseHandler = () => {
             <p className="error-input">
               {formik.errors.desc && formik.touched.desc && formik.errors.desc}
             </p>
-            <input
+            <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="price"
               placeholder="Price"
               type="number"
@@ -210,7 +212,7 @@ const deleteCourseHandler = () => {
                 formik.touched.price &&
                 formik.errors.price}
             </p>
-            <input
+            <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="discount"
               placeholder="Discount"
               type="number"
@@ -223,7 +225,7 @@ const deleteCourseHandler = () => {
                 formik.touched.discount &&
                 formik.errors.discount}
             </p>
-            <input
+            <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="duration"
               placeholder="Duration"
               value={formik.values.duration}
@@ -235,7 +237,7 @@ const deleteCourseHandler = () => {
                 formik.touched.duration &&
                 formik.errors.duration}
             </p>
-            <input
+            <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="prerequisites"
               placeholder="Prerequisites"
               value={formik.values.prerequisites}
@@ -247,7 +249,7 @@ const deleteCourseHandler = () => {
                 formik.touched.prerequisites &&
                 formik.errors.prerequisites}
             </p>
-            <input
+            <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="img"
               placeholder="Image URL"
               value={formik.values.img}
@@ -257,7 +259,7 @@ const deleteCourseHandler = () => {
             <p className="error-input">
               {formik.errors.img && formik.touched.img && formik.errors.img}
             </p>
-            <textarea
+            <motion.textarea whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="info"
               placeholder="More Info"
               value={formik.values.info}
@@ -268,7 +270,7 @@ const deleteCourseHandler = () => {
               {formik.errors.info && formik.touched.info && formik.errors.info}
             </p>
 
-            <select
+            <motion.select whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
               name="status"
               value={formik.values.status}
               onChange={formik.handleChange}
@@ -280,7 +282,7 @@ const deleteCourseHandler = () => {
               </option>
               <option value="Completed">Completed</option>
               <option value="In holding">In holding</option>
-            </select>
+            </motion.select>
             <p className="error-input">
               {formik.errors.status &&
                 formik.touched.status &&
@@ -289,7 +291,7 @@ const deleteCourseHandler = () => {
 
             {formik.values.seasons.map((season, seasonIndex) => (
               <div key={seasonIndex} className="seasons-course">
-                <input
+                <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
                   type="text"
                   placeholder={`Season ${seasonIndex + 1} Title`}
                   value={season.title}
@@ -308,7 +310,7 @@ const deleteCourseHandler = () => {
 
                 {season.sessions.map((session, sessionIndex) => (
                   <div key={sessionIndex} className="session-course">
-                    <input
+                    <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
                       type="text"
                       placeholder={`Session ${sessionIndex + 1} Title`}
                       value={session.title}
@@ -333,7 +335,7 @@ const deleteCourseHandler = () => {
                           }
                         </p>
                       )}
-                    <input
+                    <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
                       type="text"
                       placeholder={`Session ${sessionIndex + 1} Duration`}
                       value={session.duration}
@@ -362,32 +364,32 @@ const deleteCourseHandler = () => {
                   </div>
                 ))}
 
-                <button
+                <motion.button whileTap={{scale: 0.95}} whileHover={{scale: 1.1}}
                   type="button"
                   onClick={() => addSession(seasonIndex)}
                   className="edit-course-season"
                   disabled={formik.isSubmitting}
                 >
                   {formik.isSubmitting ? "adding..." : "+ add Session"}
-                </button>
+                </motion.button>
               </div>
             ))}
 
-            <button
+            <motion.button whileTap={{scale: 0.95}} whileHover={{scale: 1.1}}
               type="button"
               onClick={addSeason}
               className="edit-course-season"
             >
               + Add Season
-            </button>
+            </motion.button>
 
             <div className="crud-btns">
-                <button type="submit" className="edit-course-btn">Edit Course</button>
-                <button type="button" className="delete-course-btn" onClick={deleteCourseHandler}>Delete Course</button>
+                <motion.button whileTap={{scale: 0.95}} whileHover={{scale: 1.1}} type="submit" className="edit-course-btn">Edit Course</motion.button>
+                <motion.button whileTap={{scale: 0.95}} whileHover={{scale: 1.1}} type="button" className="delete-course-btn" onClick={deleteCourseHandler}>Delete Course</motion.button>
             </div>
-          </form>
+          </motion.form>
         </Container>
-      </div>
+      </PageWrapper>
     );
   }
 };

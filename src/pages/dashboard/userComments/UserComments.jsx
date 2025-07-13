@@ -4,7 +4,7 @@ import useCourseStore from '../../../store/courseDatas'
 import { useEffect, useState } from 'react'
 import useAuthStore from '../../../store/authStore'
 import commentImg from '../../../assets/images/comment-image.png'
-
+import { motion } from 'motion/react'
 const UserComments = () => {
   const {courses} = useCourseStore()
   const [commentsUser, setCommentsUser] = useState([])
@@ -21,14 +21,14 @@ const UserComments = () => {
   console.log(!!commentsUser.length)
   console.log(commentsUser.length)
   return (
-    <Row className='comment-user-container'>
+    <motion.div whileHover={{scale: 1.1}} className=' row comment-user-container'>
       <Col sm={12}>
       <h2>your comments : </h2>
       </Col>
       <Col>
       {courses.comment ? (commentsUser.map(comment => {
         return(
-          <div className="containers comment">
+          <motion.div whileHover={{scale: 1.1}} className="containers comment">
                       <div className="comment-title">
                         <img src={commentImg} alt="Comment Setter" />
                         <h6>{comment.name}</h6>
@@ -51,14 +51,14 @@ const UserComments = () => {
                           </div>
                         )
                       })}
-                    </div>
+                    </motion.div>
                   )
 }))
        : <div className='not-fond-comment'>
          <p>you have not posted any comments</p>
         </div>}
       </Col>
-    </Row>
+    </motion.div>
   )
 }
 

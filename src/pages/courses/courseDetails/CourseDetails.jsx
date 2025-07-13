@@ -10,11 +10,15 @@ import Comments from "./Comments";
 import AboutTeacher from "./AboutTeacher";
 import Seasons from "./Seasons";
 import AboutCourse from "./AboutCourse";
+import PageWrapper from "../../../components/pageWrapper";
 const CourseDetails = () => {
   const courseID = useParams().courseId;
   const getCourseById = useCourseStore(state => state.getCourseById)
   const loading = useCourseStore(state => state.loading)
-  const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
+  const course = useMemo(() =>{
+     const found = getCourseById(courseID)
+    return found || null
+  }, [getCourseById, courseID])
   
   if(loading || !course){
     return (
@@ -27,7 +31,7 @@ const CourseDetails = () => {
   }else{
   
   return (
-    <div>
+    <PageWrapper>
       <MyNavbar />
             <Container style={{ marginTop: "80px" }}>
               <AboutCourse courseID={courseID}/>
@@ -49,7 +53,7 @@ const CourseDetails = () => {
               </Row>
             </Container>
       <Footer />
-    </div>
+    </PageWrapper>
   )
 }
 };

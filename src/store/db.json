@@ -53,12 +53,14 @@
       ],
       "comments": [
         {
+          "id": "1",
           "name": "Ali Rezaei",
           "email": "ali@email.com",
           "date": "2025/06/01",
           "comment": "One of the best JS courses I've taken!",
           "responses": [
             {
+              "id": "1",
               "name": "Sara Mohammadi",
               "date": "2025/06/02",
               "comment": "Thanks Ali! Happy to hear that."
@@ -105,6 +107,7 @@
       ],
       "comments": [
         {
+          "id": "1",
           "name": "mohamad",
           "email": "mamd1213@gmail.com",
           "comment": "when will you update the course",
@@ -247,6 +250,7 @@
       ],
       "comments": [
         {
+          "id": "1",
           "name": "omid",
           "email": "omid@gmail.com",
           "comment": "this is so good course",
@@ -254,6 +258,7 @@
           "responses": []
         },
         {
+          "id": "2",
           "name": "ahora",
           "email": "user1@gmail.com",
           "comment": "what does this course teach?",
@@ -283,6 +288,7 @@
       "seasons": [],
       "comments": [
         {
+          "id": "1",
           "name": "ahora",
           "email": "user1@gmail.com",
           "comment": "this is sooo good 😍",
@@ -312,6 +318,7 @@
       "seasons": [],
       "comments": [
         {
+          "id": "1",
           "name": "amir",
           "email": "user2@gmail.com",
           "comment": "how can i use this package🤔",

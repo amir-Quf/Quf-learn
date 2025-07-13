@@ -7,6 +7,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import PageWrapper from "../../components/pageWrapper";
 
 const Courses = () => {
   const { wordSearch, setWordSearch } = useSearchStore();
@@ -19,6 +20,13 @@ const Courses = () => {
    const searchCourseHandler = () => {
     setWordSearch((inputRef.current.value).toLowerCase())
   }
+
+  const keyDownHandler = (e) => {
+    if(e.keyCode == 13){
+      searchCourseHandler()
+    }
+  }
+
   if(loading){
     return(
       <div className="container-loader">
@@ -30,12 +38,13 @@ const Courses = () => {
   }else{
 
   return (
-    <div>
+    <PageWrapper>
       <MyNavbar />
       <Container style={{ marginTop: "80px" }}>
         <Row className="d-flex align-items-center justify-content-center">
           <div className="search-course-box">
             <input
+            onKeyDown={keyDownHandler}
               ref={inputRef}
               defaultValue={wordSearch}
               className="search-course-inp"
@@ -85,7 +94,7 @@ const Courses = () => {
           </div>
         </Row>
       </Container>
-    </div>
+    </PageWrapper>
   )}
 };
 

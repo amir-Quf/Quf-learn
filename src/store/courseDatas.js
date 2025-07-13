@@ -14,7 +14,11 @@ const useCourseStore = create(persist((set, get) => ({
             set({error: err.message, loading: false})
         }
     },
-    getCourseById: (id) => get().courses.find((course) => course.id === id),
+    getCourseById: (id) => {
+        const courses = get().courses || []
+        return courses.find((course) => course.id === id)
+
+    },
     
 })))
 

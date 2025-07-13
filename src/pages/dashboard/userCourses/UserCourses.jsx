@@ -1,14 +1,12 @@
 import { Card, Col, Row } from "react-bootstrap";
 import "./UserCourses.css";
-import fetchApi from "../../../store/server";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useAuthStore from "../../../store/authStore";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useCourseStore from "../../../store/courseDatas";
-
+import { motion } from "motion/react";
 const UserCourses = () => {
   const { courses } = useCourseStore();
-  const userID = useAuthStore((s) => s.user.id);
   const userCourses = useAuthStore((s) => s.user.enrolledUser);
   const [allCoursesUser, setAllCoursesUser] = useState([]);
   useEffect(() => {
@@ -20,12 +18,13 @@ const UserCourses = () => {
     setAllCoursesUser(filtered)
   }, [courses, userCourses])
   return (
-    <Row className="mt-xxl-5 user-courses">
+    <motion.div whileHover={{scale: 1.1}} className=" row mt-xxl-5 user-courses">
       <h2>Your Courses : </h2>
       {userCourses ? (
         allCoursesUser.map((course) => {
           return (
-            <Col key={course.id} className="course-container" xl={3} lg={4} md={6} sm={12}>
+            <motion.div whileHover={{scale: 1.1}} key={course.id} className="col course-container" xl={3} lg={4} md={6} sm={12}>
+              <Link className="link-course" to={`/courses/${course.id}`}>
               <Card className="course-card">
                 <Card.Img variant="top" src={course.img} />
                 <Card.Body>
@@ -36,18 +35,17 @@ const UserCourses = () => {
                     <p className="title-course-details">prerequisites : {course.prerequisites}</p>
                     <p className="title-course-details">courseStatus : {course.courseStatus}</p>  
                     <span className="title-course-details">about :</span> <p className="about-course">{course.desc}</p>
-                  <Link className="link-course" to={`/courses/${course.id}`}>
-                    <button className="btn-course">course info</button>
-                  </Link>
+                    <motion.button whileTap={{scale: 0.95}} whileHover={{scale: 1.1}} className="btn-course">course info</motion.button>
                 </Card.Body>
               </Card>
-            </Col>
+                  </Link>
+            </motion.div>
           );
         })
       ) : (
         <p>you have not a taken any course</p>
       )}
-    </Row>
+    </motion.div>
   );
 };
 

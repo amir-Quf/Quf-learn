@@ -2,11 +2,10 @@ import { Container } from 'react-bootstrap'
 import MyNavbar from '../../../components/nav/Nav'
 import './ForgotPassword.css'
 import { useFormik } from 'formik'
-import { Link, useNavigate } from 'react-router-dom'
 import fetchApi from '../../../store/server'
 import Swal from 'sweetalert2'
 import {registerSchemaForgotPassword} from '../../../utils/register'
-
+import { motion } from 'motion/react'
 const ForgotPassword = () => {
   const form = useFormik({
     initialValues: {email:''},
@@ -48,13 +47,13 @@ const ForgotPassword = () => {
       <MyNavbar/>
       <div className="container-login-page">
       <Container className='container-login'>
-        <form className='form-login' onSubmit={form.handleSubmit} bindsubmit="">
-          <input value={form.values.email} onBlur={form.handleBlur} onChange={form.handleChange} name='email' type="email" placeholder='Enter your email...'/>
+        <motion.form whileHover={{scale: 1.1}} className='form-login' onSubmit={form.handleSubmit} bindsubmit="">
+          <motion.input whileFocus={{scale: 1.1}} value={form.values.email} onBlur={form.handleBlur} onChange={form.handleChange} name='email' type="email" placeholder='Enter your email...'/>
           <p className='error-input'>{form.errors.email && form.touched.email && form.errors.email}</p>
-          <button type='submit' disabled={form.isSubmitting}>{form.isSubmitting ? 'sending...' : 'send password'}</button>
-          <p>Don`t have an account ? <Link to='/register'> Register</Link> </p>
-          <Link to='/login'>i have received my password</Link>
-        </form>
+          <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} type='submit' disabled={form.isSubmitting}>{form.isSubmitting ? 'sending...' : 'send password'}</motion.button>
+          <p>Don`t have an account ? <motion.a whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} href='/register'> Register</motion.a> </p>
+          <motion.a whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} href='/login'>i have received my password</motion.a>
+        </motion.form>
       </Container>
       </div>
     </div>

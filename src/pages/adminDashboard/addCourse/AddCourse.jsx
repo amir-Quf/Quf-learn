@@ -8,7 +8,8 @@ import fetchApi from '../../../store/server'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import { registerSchemaAddNewCourse } from '../../../utils/register'
-
+import PageWrapper from '../../../components/pageWrapper'
+import { motion } from 'motion/react'
 const AddCourse = () => {
   const { courses,fetchCourses } = useCourseStore()
   const { user, updateData } = useAuthStore()
@@ -104,37 +105,37 @@ const AddCourse = () => {
   }
 
   return (
-    <div>
+    <PageWrapper>
       <MyNavbar />
       <Container style={{ marginTop: '80px' }}>
-        <form className="add-course-form" onSubmit={formik.handleSubmit}>
-          <input name="title" placeholder="Course Title" value={formik.values.title} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+        <motion.form initial={{scale: 0.9}} whileHover={{scale:1}} className="add-course-form" onSubmit={formik.handleSubmit}>
+          <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="title" placeholder="Course Title" value={formik.values.title} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.title && formik.touched.title && formik.errors.title}</p>
-          <input name="desc" placeholder="Course Description" value={formik.values.desc} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+          <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="desc" placeholder="Course Description" value={formik.values.desc} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.desc && formik.touched.desc && formik.errors.desc}</p>
-          <input name="price" placeholder="Price" type="number" value={formik.values.price} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+          <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="price" placeholder="Price" type="number" value={formik.values.price} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.price && formik.touched.price && formik.errors.price}</p>
-          <input name="discount" placeholder="Discount" type="number" value={formik.values.discount} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+          <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="discount" placeholder="Discount" type="number" value={formik.values.discount} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.discount && formik.touched.discount && formik.errors.discount}</p>
-          <input name="duration" placeholder="Duration" value={formik.values.duration} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+          <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="duration" placeholder="Duration" value={formik.values.duration} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.duration && formik.touched.duration && formik.errors.duration}</p>
-          <input name="prerequisites" placeholder="Prerequisites" value={formik.values.prerequisites} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+          <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="prerequisites" placeholder="Prerequisites" value={formik.values.prerequisites} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.prerequisites && formik.touched.prerequisites && formik.errors.prerequisites}</p>
-          <input name="img" placeholder="Image URL" value={formik.values.img} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+          <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="img" placeholder="Image URL" value={formik.values.img} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.img && formik.touched.img && formik.errors.img}</p>
-          <textarea name="info" placeholder="More Info" value={formik.values.info} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
+          <motion.textarea whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="info" placeholder="More Info" value={formik.values.info} onChange={formik.handleChange}  onBlur={formik.handleBlur}/>
           <p className='error-input'>{formik.errors.info && formik.touched.info && formik.errors.info}</p>
 
-          <select name="status" value={formik.values.status} onChange={formik.handleChange} className='dropdown-status-course' onBlur={formik.handleBlur}>
+          <motion.select whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}} name="status" value={formik.values.status} onChange={formik.handleChange} className='dropdown-status-course' onBlur={formik.handleBlur}>
             <option value="" disabled>Select Status</option>
             <option value="Completed">Completed</option>
             <option value="In holding">In holding</option>
-          </select>
+          </motion.select>
           <p className='error-input'>{formik.errors.status && formik.touched.status && formik.errors.status}</p>
 
           {formik.values.seasons.map((season, seasonIndex) => (
             <div key={seasonIndex} className="seasons-course">
-              <input
+              <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
                 type="text"
                 placeholder={`Season ${seasonIndex + 1} Title`}
                 value={season.title}
@@ -148,7 +149,7 @@ const AddCourse = () => {
 
               {season.sessions.map((session, sessionIndex) => (
                 <div key={sessionIndex} className="session-course">
-                  <input
+                  <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
                     type="text"
                     placeholder={`Session ${sessionIndex + 1} Title`}
                     value={session.title}
@@ -161,7 +162,7 @@ const AddCourse = () => {
                   {formik.errors.seasons?.[seasonIndex]?.sessions?.[sessionIndex]?.title &&
                   formik.touched.seasons?.[seasonIndex]?.sessions?.[sessionIndex]?.title && (
                   <p className='error-input'>{formik.errors.seasons[seasonIndex].sessions[sessionIndex].title}</p>)}
-                  <input
+                  <motion.input whileTap={{scale: 0.95}} whileFocus={{scale: 1.1}}
                     type="text"
                     placeholder={`Session ${sessionIndex + 1} Duration`}
                     value={session.duration}
@@ -177,16 +178,16 @@ const AddCourse = () => {
                 </div>
               ))}
 
-              <button type="button" onClick={() => addSession(seasonIndex)} className="add-course-season" disabled={formik.isSubmitting}>{formik.isSubmitting ? 'adding...' : '+ Add Session'}</button>
+              <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} type="button" onClick={() => addSession(seasonIndex)} className="add-course-season" disabled={formik.isSubmitting}>{formik.isSubmitting ? 'adding...' : '+ Add Session'}</motion.button>
             </div>
           ))}
 
-          <button type="button" onClick={addSeason} className="add-course-season">+ Add Season</button>
+          <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} type="button" onClick={addSeason} className="add-course-season">+ Add Season</motion.button>
 
-          <button type="submit" className="add-course-btn">Add Course</button>
-        </form>
+          <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} type="submit" className="add-course-btn">Add Course</motion.button>
+        </motion.form>
       </Container>
-    </div>
+    </PageWrapper>
   )
 }
 

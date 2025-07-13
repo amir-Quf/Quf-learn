@@ -25,6 +25,16 @@
     padding: 5px;
     margin-right: 20px;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar-link:hover{
+    scale: 1.1;
+}
+
+.navbar-link:active{
+    scale: 1;
 }
 
 .active{

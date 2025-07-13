@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import fetchApi from "../../../store/server";
 import useAuthStore from "../../../store/authStore";
 import { useEffect, useState } from "react";
+import { motion } from 'motion/react';
 const AdminProfile = () => {
     const userID = useAuthStore((s) => s.user.id);
   const [oldUserData, setOldUserData] = useState({});
@@ -79,13 +80,13 @@ const AdminProfile = () => {
     
   }
   return (
-    <Row className="profile-container">
+    <motion.div whileHover={{scale: 1.1}} className="profile-container row">
           <Col>
             <img src={profileImg} alt="profile" />
           </Col>
           <Col>
             <form className="form-update-profile" onSubmit={form.handleSubmit} bindsubmit="">
-              <input
+              <motion.input whileFocus={{scale: 1.1}}
                 className=""
                 value={form.values.username}
                 onChange={form.handleChange}
@@ -94,8 +95,8 @@ const AdminProfile = () => {
                 type="text"
                 placeholder="Enter username..."
               />
-              <div className="password-container-profile">
-                <input
+              <motion.div whileTap={{scale: 1.1}} className="password-container-profile">
+                <input 
                   value={form.values.password}
                   onBlur={form.handleBlur}
                   onChange={form.handleChange}
@@ -108,8 +109,8 @@ const AdminProfile = () => {
                 ) : (
                   <IoIosEye onClick={() => changeHiddenPassword()} />
                 )}
-              </div>
-              <input
+              </motion.div>
+              <motion.input whileFocus={{scale: 1.1}}
                 className=""
                 value={form.values.email}
                 onChange={form.handleChange}
@@ -118,18 +119,18 @@ const AdminProfile = () => {
                 type="text"
                 placeholder="Enter email..."
               />
-              <textarea value={form.values.desc}
+              <motion.textarea whileFocus={{scale: 1.1}} value={form.values.desc}
                 onChange={form.handleChange}
                 onBlur={form.handleBlur}
                 name="desc"
                 placeholder="your biography..."/>
                 <div className="btns-container">
-              <button type="submit">update</button>
-              <button type="button" onClick={deleteAccountHandler} className="delete-account-btn">delete account</button>
+              <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} type="submit">update</motion.button>
+              <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} type="button" onClick={deleteAccountHandler} className="delete-account-btn">delete account</motion.button>
                 </div>
             </form>
           </Col>
-        </Row>
+        </motion.div>
   )
 }
 

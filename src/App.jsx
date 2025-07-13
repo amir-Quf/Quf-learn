@@ -1,8 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import Home from './pages/home/Home';
-import AdminAnalytics from './pages/adminDashboard/adminAnalytics/AdminAnalytics';
-import AdminCourseManagement from './pages/adminDashboard/adminCourseManagement/AdminCourses';
 import CourseDetails from './pages/courses/courseDetails/CourseDetails';
 import AdminDashboard from './pages/adminDashboard/AdminDashboard';
 import Courses from './pages/courses/Courses';
@@ -17,10 +15,13 @@ import AdminRoute from './routes/AdminRoute';
 import AddCourse from './pages/adminDashboard/addCourse/AddCourse';
 import EditCourse from './pages/adminDashboard/editCourse/EditCourse';
 import About from './pages/about/About';
+import { AnimatePresence } from 'motion/react';
 
 const App = () => {
+  const location = useLocation()
   return (
-    <Routes>
+    <AnimatePresence mode='wait'>
+    <Routes location={location} key={location.pathname}>
       <Route path='/' element={<Home/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/login/forgot-password' element={<ForgotPassword/>}/>
@@ -48,11 +49,6 @@ const App = () => {
           <AdminDashboard/>
         </AdminRoute>
         }/>
-      <Route path='/admin/analytics' element={
-        <AdminRoute>
-          <AdminAnalytics/>
-        </AdminRoute>
-        }/>
       <Route path='/admin/add-course' element={
         <AdminRoute>
           <AddCourse/>
@@ -64,6 +60,7 @@ const App = () => {
         </AdminRoute>
         }/>
     </Routes>
+    </AnimatePresence>
   );
 };
 

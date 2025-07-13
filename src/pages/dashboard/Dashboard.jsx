@@ -5,11 +5,12 @@ import Profile from "./profile/Profile";
 import UserCourses from "./userCourses/UserCourses";
 import Footer from "../../components/footer/Footer";
 import UserComments from "./userComments/UserComments";
+import PageWrapper from "../../components/pageWrapper";
 
 const Dashboard = () => {
   
   return (
-    <div>
+    <PageWrapper>
       <MyNavbar />
       <Container style={{ marginTop: "80px" }}>
         <Profile/>
@@ -17,7 +18,7 @@ const Dashboard = () => {
         <UserComments/>
       </Container>
       <Footer/>
-    </div>
+    </PageWrapper>
   );
 };
 

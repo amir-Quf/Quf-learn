@@ -24,7 +24,6 @@
     border-radius: 5px;
     background-color: var(--primary-color);
     outline: #ccc !important;
-    transition: all 0.25s ease-in-out;
 }
 
 .form-update-profile input:focus{
@@ -84,7 +83,6 @@
     border-radius: 5px;
     padding: 10px;
     font-weight: 600;
-    transition: all 0.25s ease-in-out;
 }
 
 .form-update-profile button:hover{

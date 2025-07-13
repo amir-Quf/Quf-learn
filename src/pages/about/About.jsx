@@ -2,9 +2,9 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import MyNavbar from "../../components/nav/Nav";
 import "./About.css";
 import missionsImg from "../../assets/images/bg2.jpeg";
-import useAuthStore from "../../store/authStore";
 import fetchApi from "../../store/server";
 import { useEffect, useState } from "react";
+import PageWrapper from "../../components/pageWrapper";
 
 const features = [
     {
@@ -36,7 +36,7 @@ const About = () => {
     const admins = users.filter(user => user.role == 'admin')
     console.log(admins)
     return (
-    <div>
+    <PageWrapper>
       <MyNavbar />
 
         <Container className="about-section">
@@ -124,7 +124,7 @@ const About = () => {
             at <b>support@quflearn.com</b>
           </p>
         </Container>
-    </div>
+    </PageWrapper>
   );
 };
 

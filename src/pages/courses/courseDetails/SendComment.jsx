@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { memo, useMemo } from "react";
 import useCourseStore from "../../../store/courseDatas";
 import Swal from "sweetalert2";
-
+import { motion } from "motion/react";
 const SendComment = () => {
     const courseID = useParams().courseId;
     const {fetchCourses} = useCourseStore()
@@ -16,6 +16,7 @@ const SendComment = () => {
     initialValues: { name: "", email: "", comment: "" },
     onSubmit: async (values, { setSubmitting, resetForm }, ) => {
         const newComment = {
+        id: String(course.comments + 1),
         name: values.name,
         email: values.email,
         comment: values.comment,
@@ -46,14 +47,14 @@ const SendComment = () => {
     validationSchema: registerSchemaComment,
   });
   return (
-    <Col>
+    <motion.div whileHover={{scale: 1.1}} className="col">
       <h3>Write a comment : </h3>
       <form
         className="containers send-comment-container"
         onSubmit={form.handleSubmit}
       >
         <label htmlFor="name">Please Enter Your Name : </label>
-        <input
+        <motion.input whileFocus={{scale: 1.1}}
           value={form.values.name}
           onChange={form.handleChange}
           onBlur={form.handleBlur}
@@ -65,7 +66,7 @@ const SendComment = () => {
           {form.errors.name && form.touched.name && form.errors.name}
         </p>
         <label htmlFor="email">Please Enter Your Email : </label>
-        <input
+        <motion.input whileFocus={{scale: 1.1}}
           value={form.values.email}
           onChange={form.handleChange}
           onBlur={form.handleBlur}
@@ -77,7 +78,7 @@ const SendComment = () => {
           {form.errors.email && form.touched.email && form.errors.email}
         </p>
         <label htmlFor="comment">Please Enter Your Comment : </label>
-        <textarea
+        <motion.textarea whileFocus={{scale: 1.1}}
           value={form.values.comment}
           onChange={form.handleChange}
           onBlur={form.handleBlur}
@@ -87,9 +88,9 @@ const SendComment = () => {
         <p className="error-comment">
           {form.errors.comment && form.touched.comment && form.errors.comment}
         </p>
-        <button type="submit" disabled={form.isSubmitting}>{form.isSubmitting ? 'sending...': 'Send Comment'}</button>
+        <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} type="submit" disabled={form.isSubmitting}>{form.isSubmitting ? 'sending...': 'Send Comment'}</motion.button>
       </form>
-    </Col>
+    </motion.div>
   );
 };
 
