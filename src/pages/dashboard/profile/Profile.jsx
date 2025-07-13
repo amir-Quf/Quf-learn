@@ -10,6 +10,7 @@ import fetchApi from "../../../store/server";
 import useAuthStore from "../../../store/authStore";
 import { useEffect, useState } from "react";
 import { motion } from 'motion/react';
+import HeadHelmet from '../../../components/HeadHelmet';
 const Profile = () => {
   const userID = useAuthStore((s) => s.user.id);
   const [oldUserData, setOldUserData] = useState({});
@@ -81,6 +82,7 @@ const Profile = () => {
   }
   return (
     <motion.div whileHover={{scale: 1.1}} className="row profile-container">
+      <HeadHelmet title='profile' desc='my profile to QufLearn site | userProfile'/>
           <Col>
             <motion.img whileHover={{scale: 1.1}} src={profileImg} alt="profile" />
           </Col>

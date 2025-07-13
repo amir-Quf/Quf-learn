@@ -10,6 +10,7 @@ import useCourseStore from "../../store/courseDatas";
 import useSearchStore from "../../store/searchStore";
 import { motion } from "motion/react";
 import PageWrapper from "../../components/pageWrapper";
+import HeadHelmet from "../../components/HeadHelmet";
 const Home = () => {
   const navigator = useNavigate();
   const inputRef = useRef();
@@ -39,6 +40,7 @@ const Home = () => {
   } else {
     return (
       <PageWrapper>
+        <HeadHelmet title='home' desc='programming, website design, project-based QufLearn'/>
         <header className="header">
           <MyNavbar />
           <Container className="d-flex justify-content-center align-items-center">

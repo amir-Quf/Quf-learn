@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import { registerSchemaAddNewCourse } from '../../../utils/register'
 import PageWrapper from '../../../components/pageWrapper'
 import { motion } from 'motion/react'
+import HeadHelmet from '../../../components/HeadHelmet'
 const AddCourse = () => {
   const { courses,fetchCourses } = useCourseStore()
   const { user, updateData } = useAuthStore()
@@ -106,6 +107,7 @@ const AddCourse = () => {
 
   return (
     <PageWrapper>
+      <HeadHelmet title='add-course' desc='add new course to QufLearn site'/>
       <MyNavbar />
       <Container style={{ marginTop: '80px' }}>
         <motion.form initial={{scale: 0.9}} whileHover={{scale:1}} className="add-course-form" onSubmit={formik.handleSubmit}>

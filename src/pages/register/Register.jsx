@@ -9,6 +9,7 @@ import { registerSchemaUser } from '../../utils/register'
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import useAuthStore from '../../store/authStore'
 import { motion } from 'motion/react' 
+import HeadHelmet from '../../components/HeadHelmet'
 const Register = () => {
   const navigator = useNavigate()
   const { hiddenPassword, changeHiddenPassword} = useAuthStore()
@@ -70,6 +71,7 @@ const Register = () => {
   })
   return (
     <div>
+      <HeadHelmet title='sing In' desc='sing in to QufLearn site'/>
       <MyNavbar/>
         <div className="container-login-page">
       <Container className='container-login'>

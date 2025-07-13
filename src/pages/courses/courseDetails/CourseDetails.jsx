@@ -11,6 +11,7 @@ import AboutTeacher from "./AboutTeacher";
 import Seasons from "./Seasons";
 import AboutCourse from "./AboutCourse";
 import PageWrapper from "../../../components/pageWrapper";
+import HeadHelmet from "../../../components/HeadHelmet";
 const CourseDetails = () => {
   const courseID = useParams().courseId;
   const getCourseById = useCourseStore(state => state.getCourseById)
@@ -32,6 +33,7 @@ const CourseDetails = () => {
   
   return (
     <PageWrapper>
+      <HeadHelmet title={course.title} desc={`about ${course.title} course || register to ${course.title} course || ${course.title} training`}/>
       <MyNavbar />
             <Container style={{ marginTop: "80px" }}>
               <AboutCourse courseID={courseID}/>

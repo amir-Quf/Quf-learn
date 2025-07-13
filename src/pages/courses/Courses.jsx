@@ -39,6 +39,7 @@ const Courses = () => {
 
   return (
     <PageWrapper>
+      <HeadHelmet title='courses' desc='searching at courses QufLearn site'/>
       <MyNavbar />
       <Container style={{ marginTop: "80px" }}>
         <Row className="d-flex align-items-center justify-content-center">

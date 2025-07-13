@@ -6,6 +6,7 @@ import fetchApi from '../../../store/server'
 import Swal from 'sweetalert2'
 import {registerSchemaForgotPassword} from '../../../utils/register'
 import { motion } from 'motion/react'
+import HeadHelmet from '../../../components/HeadHelmet'
 const ForgotPassword = () => {
   const form = useFormik({
     initialValues: {email:''},
@@ -44,6 +45,7 @@ const ForgotPassword = () => {
   })
   return (
     <div>
+      <HeadHelmet title='forgotPassword' desc='i forgot password my account'/>
       <MyNavbar/>
       <div className="container-login-page">
       <Container className='container-login'>

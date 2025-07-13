@@ -12,6 +12,7 @@ import { registerSchemaAddNewCourse } from "../../../utils/register";
 import { useEffect, useState } from "react";
 import PageWrapper from "../../../components/pageWrapper";
 import { motion } from "motion/react";
+import HeadHelmet from "../../../components/HeadHelmet";
 const EditCourse = () => {
   const courseID = useParams().courseId;
   const [initialValues, setInitialValues] = useState(null);
@@ -174,6 +175,7 @@ const deleteCourseHandler = () => {
   } else {
     return (
       <PageWrapper>
+      <HeadHelmet title='edit-course' desc='edit-course at QufLearn site'/>
         <MyNavbar />
         <Container style={{ marginTop: "80px" }}>
           <motion.form initial={{scale: 0.9}} whileHover={{scale: 1}} className="edit-course-form" onSubmit={formik.handleSubmit}>

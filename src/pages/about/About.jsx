@@ -5,6 +5,7 @@ import missionsImg from "../../assets/images/bg2.jpeg";
 import fetchApi from "../../store/server";
 import { useEffect, useState } from "react";
 import PageWrapper from "../../components/pageWrapper";
+import HeadHelmet from "../../components/HeadHelmet";
 
 const features = [
     {
@@ -37,6 +38,7 @@ const About = () => {
     console.log(admins)
     return (
     <PageWrapper>
+      <HeadHelmet title='about' desc='about QufLearn platform'/>
       <MyNavbar />
 
         <Container className="about-section">
