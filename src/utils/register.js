@@ -1,4 +1,4 @@
-import * as Yup from 'Yup'
+import * as Yup from 'yup'
 
 const registerSchemaComment = Yup.object().shape({
     name: Yup.string('Name must be a string').min(3, 'the name must be at least 3 characters long').max(20, 'the name length must be a maximum of 20 characters').required('this field is required'),
