@@ -7,7 +7,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuthStore from "../../store/authStore";
 import { memo } from "react";
 import logoImg from "../../assets/images/logo.svg";
-import { motion, scale } from "motion/react";
+import { motion } from "motion/react";
 function MyNavbar() {
   const { getRole, logout, isAdmin } = useAuthStore();
 

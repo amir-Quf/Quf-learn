@@ -1,4 +1,3 @@
-import './AdminDashboard.css'
 import MyNavbar from '../../components/nav/Nav'
 import { Container } from 'react-bootstrap'
 import AdminProfile from './adminProfile/AdminProfile'

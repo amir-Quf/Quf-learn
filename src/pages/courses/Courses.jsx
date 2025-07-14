@@ -1,4 +1,3 @@
-import axios from "axios";
 import MyNavbar from "../../components/nav/Nav";
 import "./Courses.css";
 import useSearchStore from "../../store/searchStore";

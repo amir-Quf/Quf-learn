@@ -1,6 +1,5 @@
 import './AdminProfile.css'
-import { Col, Row } from "react-bootstrap";
-import profileImg from "../../../assets/images/comment-image.png";
+import { Col } from "react-bootstrap";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { useFormik } from "formik";
 import { registerSchemaReDataUser } from "../../../utils/register";

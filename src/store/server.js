@@ -3,7 +3,7 @@ import axios from "axios";
 const token = localStorage.getItem('token')
 
 const fetchApi = axios.create({
-    baseURL: 'https://quflearn-db.liara.run',
+    baseURL: 'http://localhost:3000',
     headers: {
         "Content-Type" : "application/json",
         Authorization: `Bearer ${token}`

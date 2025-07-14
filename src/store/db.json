@@ -14,7 +14,7 @@
       "img": "/src/assets/images/js.jpeg",
       "teacher": {
         "name": "jade stevens",
-        "img": "/images/teachers/sara.jpg",
+        "img": "/src/assets/images/jade-stevens.jpeg",
         "bio": "Senior frontend developer with over 8 years of experience in web development, specialized in JavaScript frameworks."
       },
       "seasons": [
@@ -84,7 +84,7 @@
       "img": "/src/assets/images/reactLibraries.jpeg",
       "teacher": {
         "name": "jade stevens",
-        "img": "/images/teachers/reza.jpg",
+        "img": "/src/assets/images/jade-stevens.jpeg",
         "bio": "Senior frontend developer with over 8 years of experience in web development, specialized in JavaScript frameworks."
       },
       "seasons": [
@@ -131,7 +131,7 @@
       "img": "/src/assets/images/react.jpeg",
       "teacher": {
         "name": "jade stevens",
-        "img": "/images/teachers/amin.jpg",
+        "img": "/src/assets/images/jade-stevens.jpeg",
         "bio": "Senior frontend developer with over 8 years of experience in web development, specialized in JavaScript frameworks."
       },
       "seasons": [
@@ -180,7 +180,7 @@
       "img": "/src/assets/images/nodeJs.jpeg",
       "teacher": {
         "name": "scott alpay",
-        "img": "",
+        "img": "/src/assets/images/jade-stevens.jpeg",
         "bio": "Web developer and Next.js specialist with expertise in SEO and full-stack design"
       },
       "seasons": [
@@ -233,7 +233,7 @@
       "img": "/src/assets/images/nextJs.jpeg",
       "teacher": {
         "name": "scott alpay",
-        "img": "/images/teachers/niloofar.jpg",
+        "img": "/src/assets/images/scott-alpay.jpeg",
         "bio": "Web developer and Next.js specialist with expertise in SEO and full-stack design"
       },
       "seasons": [
@@ -282,7 +282,7 @@
       "img": "/src/assets/images/npm.jpeg",
       "teacher": {
         "name": "jade stevens",
-        "img": "/images/teachers/kian.jpg",
+        "img": "/src/assets/images/jade-stevens.jpeg",
         "bio": "Senior frontend developer with over 8 years of experience in web development, specialized in JavaScript frameworks."
       },
       "seasons": [],
@@ -312,7 +312,7 @@
       "img": "/src/assets/images/bootstrap.jpeg",
       "teacher": {
         "name": "marielle moore",
-        "img": "/images/teachers/farid.jpg",
+        "img": "/src/assets/images/marielle-moore.jpeg",
         "bio": "Layout design specialist and Flexbox expert helping devs structure UI effectively."
       },
       "seasons": [],
@@ -342,7 +342,7 @@
       "img": "/src/assets/images/gitHub.jpeg",
       "teacher": {
         "name": "scott alpay",
-        "img": "/images/teachers/azadeh.jpg",
+        "img": "/src/assets/images/scott-alpay.jpeg",
         "bio": "Web developer and Next.js specialist with expertise in SEO and full-stack design"
       },
       "seasons": [],
@@ -363,7 +363,7 @@
       "img": "/src/assets/images/css.jpeg",
       "teacher": {
         "name": "marielle moore",
-        "img": "/images/teachers/milad.jpg",
+        "img": "/src/assets/images/marielle-moore.jpeg",
         "bio": "Layout design specialist and Flexbox expert helping devs structure UI effectively."
       },
       "seasons": [],
@@ -384,7 +384,7 @@
       "img": "/src/assets/images/html.jpeg",
       "teacher": {
         "name": "marielle moore",
-        "img": "../assets/images/html.jpeg",
+        "img": "/src/assets/images/marielle-moore.jpeg",
         "bio": "Layout design specialist and Flexbox expert helping devs structure UI effectively."
       },
       "seasons": [],
@@ -405,7 +405,7 @@
       "img": "/src/assets/images/flexBox.jpeg",
       "teacher": {
         "name": "marielle moore",
-        "img": "/images/teachers/mehrdad.jpg",
+        "img": "/src/assets/images/marielle-moore.jpeg",
         "bio": "Layout design specialist and Flexbox expert helping devs structure UI effectively."
       },
       "seasons": [],
@@ -419,6 +419,8 @@
       "password": "amirQuf59",
       "email": "amirQuf@gmail.com",
       "desc": "",
+      "role": "user",
+      "enrolledUser": [],
       "id": "1"
     },
     {
@@ -427,7 +429,7 @@
       "email": "jadeStevents@gmail.com",
       "desc": "Senior frontend developer with over 8 years of experience in web development, specialized in JavaScript frameworks.",
       "role": "admin",
-      "img": "",
+      "img": "/src/assets/images/jade-stevens.jpeg",
       "enrolledUser": [],
       "courses": [1, 2, 3, 6],
       "id": "2"
@@ -438,7 +440,7 @@
       "email": "marielleMoore@gmail.com",
       "desc": "Layout design specialist and Flexbox expert helping devs structure UI effectively.",
       "role": "admin",
-      "img": "",
+      "img": "/src/assets/images/marielle-moore.jpeg",
       "enrolledUser": [],
       "courses": [7,9,10,11],
       "id": "3"
@@ -449,7 +451,7 @@
       "email": "scottAlpay@gmail.com",
       "desc": "Web developer and Next.js specialist with expertise in SEO and full-stack design",
       "role": "admin",
-      "img": "",
+      "img": "/src/assets/images/scott-alpay.jpeg",
       "enrolledUser": [],
       "courses": [4,5,8],
       "id": "4"

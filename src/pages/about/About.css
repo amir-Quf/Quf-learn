@@ -29,6 +29,12 @@
     padding: 10px;
 }
 
+.text-center img{
+  width: 350px;
+  height: 350px;
+  border-radius: 50% !important;
+}
+
 .about-feature-card {
   background-color: #f9f9f9;
   border: none;

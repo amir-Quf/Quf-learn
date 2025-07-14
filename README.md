@@ -1,5 +1,7 @@
 # Quf-learn
 
+### [Quflearn website link](https://quflearn.liara.run)
+
 ## teaching programming platform for all programmer
 
 ## ⭐ Futures
@@ -13,6 +15,8 @@
 ✅ Good UI & UX
 
 ✅ global states
+
+✅ performance optimization
 
 ## about Quf-learn :
 

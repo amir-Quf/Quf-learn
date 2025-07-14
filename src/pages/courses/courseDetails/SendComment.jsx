@@ -1,5 +1,4 @@
 import { useFormik } from "formik";
-import { Col } from "react-bootstrap";
 import {registerSchemaComment} from "../../../utils/register";
 import fetchApi from "../../../store/server";
 import { useParams } from "react-router-dom";

@@ -1,6 +1,6 @@
 import { Col } from "react-bootstrap";
 import useCourseStore from "../../../store/courseDatas";
-import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useMemo, useRef, useState } from "react";
 import commentImg from "../../../assets/images/comment-image.png";
 import { PiArrowBendDoubleUpLeftFill } from "react-icons/pi";
 import { motion } from "motion/react";
