@@ -74,7 +74,7 @@ const AboutCourse = ({courseID}) => {
       <motion.Row whileHover={{scale: 1.1}} className="course-Details-container row">
                 <Col lg={6} md={12}>
                   <div className="course-img-box">
-                    <img className="course-img-box__cover" src={course.img} alt={course.title} />
+                    <img loading="lazy" className="course-img-box__cover" src={course.img} alt={course.title} />
                   </div>
                 </Col>
                 <Col className="about-title-course" lg={6} md={12}>

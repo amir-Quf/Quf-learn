@@ -66,7 +66,7 @@ const Courses = () => {
               return (
                 <Col sm={12} md={6} lg={4} xl={3} key={course.id}>
                   <Card className="course-card">
-                    <Card.Img variant="top" src={course.img} />
+                    <Card.Img loading="lazy" variant="top" src={course.img} />
                     <Card.Body>
                       <Card.Title className="title-course">
                         {course.title}

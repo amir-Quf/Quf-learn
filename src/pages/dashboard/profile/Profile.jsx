@@ -84,7 +84,7 @@ const Profile = () => {
     <motion.div whileHover={{scale: 1.1}} className="row profile-container">
       <HeadHelmet title='profile' desc='my profile to QufLearn site | userProfile'/>
           <Col>
-            <motion.img whileHover={{scale: 1.1}} src={profileImg} alt="profile" />
+            <motion.img loading="lazy" whileHover={{scale: 1.1}} src={profileImg} alt="profile" />
           </Col>
           <Col>
             <form className="form-update-profile" onSubmit={form.handleSubmit} bindsubmit="">

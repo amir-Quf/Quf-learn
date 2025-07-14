@@ -82,7 +82,7 @@ const AdminProfile = () => {
   return (
     <motion.div whileHover={{scale: 1.1}} className="profile-container row">
           <Col>
-            <img src={user.img} className='profile-admin-img' alt="profile" />
+            <img loading="lazy" src={user.img} className='profile-admin-img' alt="profile" />
           </Col>
           <Col>
             <form className="form-update-profile" onSubmit={form.handleSubmit} bindsubmit="">

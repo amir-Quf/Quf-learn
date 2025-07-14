@@ -26,7 +26,7 @@ const UserCourses = () => {
             <Col className="course-container" xl={3} lg={4} md={6} sm={12} whileHover={{scale: 1.1}} key={course.id} >
               <Link className="link-course" to={`/courses/${course.id}`}>
               <Card className="course-card">
-                <Card.Img variant="top" src={course.img} />
+                <Card.Img loading="lazy" variant="top" src={course.img} />
                 <Card.Body>
                   <Card.Title className="about-course">
                     {course.title}

@@ -16,6 +16,7 @@ function MyNavbar() {
     <Navbar key={expand} expand={expand} className=" my-navbar mb-3">
       <Container>
         <motion.img
+        loading="lazy"
         whileHover={{scale: 1.1}}
         initial={{x: -800}}
           animate={

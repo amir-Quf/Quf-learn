@@ -57,7 +57,7 @@ const About = () => {
               </p>
             </Col>
             <Col md={6}>
-              <img src={missionsImg} alt="Our Mission" className="img-fluid" />
+              <img loading="lazy" src={missionsImg} alt="Our Mission" className="img-fluid" />
             </Col>
           </Row>
         </Container>
@@ -86,6 +86,7 @@ const About = () => {
             {admins.length ? admins.map((person) => (
               <Col md={4} key={person.id} className="text-center">
                 <img
+                loading="lazy"
                   src={person.img}
                   alt={person.username}
                   className="about-team-img"

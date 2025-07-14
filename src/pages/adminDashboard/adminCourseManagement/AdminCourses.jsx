@@ -32,7 +32,7 @@ const AdminCourses = () => {
               <Col className=" course-container" key={course.id} xl={3} lg={4} md={6} sm={12}>
               <Link className="link-course" to={`/admin/edit-course/${course.id}`}>
               <motion.div whileHover={{scale: 1.1}} className=" card course-card">
-                <Card.Img variant="top" src={course.img} />
+                <Card.Img loading="lazy" variant="top" src={course.img} />
                 <Card.Body>
                   <Card.Title className="about-course">
                     {course.title}

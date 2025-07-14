@@ -92,7 +92,7 @@ const Home = () => {
                   <Col sm={12} md={6} lg={4} xl={3} key={course.id}>
                     <Link className="link-course" to={`/courses/${course.id}`}>
                       <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} className="course-card card">
-                        <Card.Img variant="top" src={course.img} />
+                        <Card.Img loading="lazy" variant="top" src={course.img} />
                         <Card.Body>
                           <Card.Title className="title-course">
                             {course.title}

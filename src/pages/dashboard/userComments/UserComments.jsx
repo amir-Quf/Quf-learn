@@ -30,7 +30,7 @@ const UserComments = () => {
         return(
           <motion.div whileHover={{scale: 1.1}} className="containers comment">
                       <div className="comment-title">
-                        <img src={commentImg} alt="Comment Setter" />
+                        <img loading="lazy" src={commentImg} alt="Comment Setter" />
                         <h6>{comment.name}</h6>
                       </div>
                       <span>{comment.date}</span>
@@ -42,7 +42,7 @@ const UserComments = () => {
                             <PiArrowBendDoubleUpLeftFill />
                             <div className="responses-comment">
                               <div className="response-comment-title">
-                                <img src={course.teacher.img} alt="responser" />
+                                <img loading="lazy" src={course.teacher.img} alt="responser" />
                                 <h6>{res.name}</h6>
                               </div>
                               <span>{res.date}</span>

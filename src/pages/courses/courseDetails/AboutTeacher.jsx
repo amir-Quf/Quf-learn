@@ -7,7 +7,7 @@ const AboutTeacher = ({courseID}) => {
     const course = useMemo(() => getCourseById(courseID), [getCourseById, courseID])
   return (
     <motion.section whileHover={{scale: 1.1}} className="teacher-course-box containers">
-      <img src={course.teacher.img} alt="teacher photo" />
+      <img loading="lazy" src={course.teacher.img} alt="teacher photo" />
       <h3 className="teacher-name">Teacher : {course.teacher.name}</h3>
       <p>About Teacher : {course.teacher.bio}</p>
       <Link to={`/`}>
