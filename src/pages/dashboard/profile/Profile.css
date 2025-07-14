@@ -33,7 +33,7 @@
 
 .password-container-profile{
     background-color: var(--primary-color);
-    width: 500px !important;
+    width: 500px ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,4 +95,10 @@
 
 .delete-account-btn:hover{
     background-color: var(--bg-secondary) !important;
+}
+
+@media screen and (max-width: 745px) {
+    .password-container-profile{
+        width: 100% !important;
+    }
 }

@@ -29,9 +29,9 @@ const AdminCourses = () => {
       {userCourses ? (
         allCoursesUser.map((course) => {
           return (
-            <motion.div whileHover={{scale: 1.1}} key={course.id} className=" col course-container" xl={3} lg={4} md={6} sm={12}>
+              <Col className=" course-container" key={course.id} xl={3} lg={4} md={6} sm={12}>
               <Link className="link-course" to={`/admin/edit-course/${course.id}`}>
-              <Card className="course-card">
+              <motion.div whileHover={{scale: 1.1}} className=" card course-card">
                 <Card.Img variant="top" src={course.img} />
                 <Card.Body>
                   <Card.Title className="about-course">
@@ -43,9 +43,9 @@ const AdminCourses = () => {
                     <span className="title-course-details">about :</span> <p className="about-course">{course.desc}</p>
                     <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.95}} className="btn-course">Edit Course</motion.button>
                 </Card.Body>
-              </Card>
+              </motion.div>
                   </Link>
-            </motion.div>
+              </Col>
           );
         })
       ) : (

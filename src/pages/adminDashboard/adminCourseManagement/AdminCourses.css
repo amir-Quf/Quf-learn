@@ -3,10 +3,11 @@
     padding: 30px 60px;
     box-shadow: 0 0 5px 3px #ccc;
     margin-top: 40px !important;
+    display: flex !important;
 }
 
 .course-container{
-    overflow: hidden !important;
+    overflow: visible !important;
 }
 
 .title-course-details{

@@ -24,7 +24,6 @@
     border-radius: 5px;
     background-color: var(--primary-color);
     outline: #ccc !important;
-    transition: all 0.25s ease-in-out;
 }
 
 .form-update-profile input:focus{
@@ -40,6 +39,11 @@
     justify-content: center;
     border-radius: 5px;
     padding: 10px;
+}
+
+.profile-admin-img{
+    width: 300px;
+    margin-bottom: 20px;
 }
 
 .password-container-profile:has(input:focus){
@@ -84,7 +88,6 @@
     border-radius: 5px;
     padding: 10px;
     font-weight: 600;
-    transition: all 0.25s ease-in-out;
 }
 
 .form-update-profile button:hover{
@@ -97,4 +100,17 @@
 
 .delete-account-btn:hover{
     background-color: var(--bg-secondary) !important;
+}
+
+@media screen and (max-width: 745px) {
+    .form-update-profile textarea{
+        width: 100% !important;
+    }
+    .form-update-profile input{
+        width: 100% !important;
+    }
+
+    .password-container-profile{
+        width: 100%;
+    }
 }

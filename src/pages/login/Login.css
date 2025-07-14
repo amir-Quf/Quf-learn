@@ -1,6 +1,8 @@
 .container-login-page{
     background-image: url('../../assets/images/bg2.jpeg') !important;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container-login{

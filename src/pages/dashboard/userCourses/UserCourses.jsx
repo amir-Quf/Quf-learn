@@ -23,7 +23,7 @@ const UserCourses = () => {
       {userCourses ? (
         allCoursesUser.map((course) => {
           return (
-            <motion.div whileHover={{scale: 1.1}} key={course.id} className="col course-container" xl={3} lg={4} md={6} sm={12}>
+            <Col className="course-container" xl={3} lg={4} md={6} sm={12} whileHover={{scale: 1.1}} key={course.id} >
               <Link className="link-course" to={`/courses/${course.id}`}>
               <Card className="course-card">
                 <Card.Img variant="top" src={course.img} />
@@ -39,7 +39,7 @@ const UserCourses = () => {
                 </Card.Body>
               </Card>
                   </Link>
-            </motion.div>
+            </Col>
           );
         })
       ) : (

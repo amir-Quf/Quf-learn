@@ -102,7 +102,6 @@
     border-radius: 5px;
     font-weight: 600;
     background-color: var(--secondary-color);
-    transition: all .15s;
 }
 
 .edit-course-btn:hover {
@@ -115,7 +114,6 @@
     padding: 10px;
     border-radius: 5px;
     font-weight: 600;
-    transition: all .15s;
 }
 
 .delete-course-btn:hover{
@@ -159,6 +157,9 @@
         margin: 0;
     }
     .edit-course-form input{
+        width: 100%;
+    }
+    .crud-btns{
         width: 100%;
     }
 }

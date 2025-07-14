@@ -2,8 +2,8 @@
 .header {
     padding-top: 80px;
     position: relative;
-    min-width: 100vw;
-    min-height: 85vh;
+    width: 100vw;
+    height: 85vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
