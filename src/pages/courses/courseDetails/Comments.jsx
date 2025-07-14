@@ -21,7 +21,7 @@ const Comments = ({ courseID }) => {
   const answerHandler = (id) => {
     setIsAnswering(id);
   };
-  const sendResponseHandler = (id, commentDetails) => {
+  const sendResponseHandler = (id) => {
     const now = new Date();
     const year = now.getFullYear();
     const month = now.getMonth() + 1;
@@ -61,7 +61,7 @@ const Comments = ({ courseID }) => {
           icon: "error",
         });
       });
-  };
+  }
   return (
     <Col>
       {course.comments.map((commentDetails) => {
@@ -89,7 +89,7 @@ const Comments = ({ courseID }) => {
                 <motion.button
                   type="submit"
                   onClick={() =>
-                    sendResponseHandler(commentDetails.id, commentDetails)
+                    sendResponseHandler(commentDetails.id)
                   }
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}

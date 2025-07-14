@@ -1,4 +1,5 @@
 import {motion} from 'motion/react'
+import { memo } from 'react'
 
 const PageWrapper = ({children}) => {
     const pageVariants = {
@@ -13,4 +14,4 @@ const PageWrapper = ({children}) => {
   )
 }
 
-export default PageWrapper
+export default memo(PageWrapper)

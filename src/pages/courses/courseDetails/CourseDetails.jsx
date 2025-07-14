@@ -1,5 +1,5 @@
 import "./CourseDetails.css";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import MyNavbar from "../../../components/nav/Nav";
@@ -60,4 +60,4 @@ const CourseDetails = () => {
 }
 };
 
-export default CourseDetails;
+export default memo(CourseDetails);

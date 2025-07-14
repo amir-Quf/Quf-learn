@@ -4,6 +4,7 @@ import AdminProfile from './adminProfile/AdminProfile'
 import AdminCourses from './adminCourseManagement/AdminCourses'
 import PageWrapper from '../../components/pageWrapper'
 import HeadHelmet from '../../components/HeadHelmet'
+import { memo } from 'react'
 const AdminDashboard = () => {
   return (
     <PageWrapper>
@@ -17,4 +18,4 @@ const AdminDashboard = () => {
   )
 }
 
-export default AdminDashboard
+export default memo(AdminDashboard)

@@ -9,7 +9,7 @@ import useAuthStore from '../../../store/authStore'
 import fetchApi from '../../../store/server'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
-import { motion, scale } from 'motion/react'
+import { motion } from 'motion/react'
 const AboutCourse = ({courseID}) => {
   const navigator = useNavigate()
     const getCourseById = useCourseStore(s => s.getCourseById)

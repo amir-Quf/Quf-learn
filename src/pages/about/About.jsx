@@ -3,7 +3,7 @@ import MyNavbar from "../../components/nav/Nav";
 import "./About.css";
 import missionsImg from "../../assets/images/bg2.jpeg";
 import fetchApi from "../../store/server";
-import { useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import PageWrapper from "../../components/pageWrapper";
 import HeadHelmet from "../../components/HeadHelmet";
 
@@ -34,8 +34,7 @@ const About = () => {
         })
         .catch(err => console.log(err))
     },[])
-    const admins = users.filter(user => user.role == 'admin')
-    console.log(admins)
+    const admins = useCallback(users.filter(user => user.role == 'admin'),[users])
     return (
     <PageWrapper>
       <HeadHelmet title='about' desc='about QufLearn platform'/>
@@ -130,4 +129,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default memo(About);

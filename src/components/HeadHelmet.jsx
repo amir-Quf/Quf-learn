@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import {Helmet} from 'react-helmet'
 
 const HeadHelmet = ({title, desc}) => {
@@ -9,4 +10,4 @@ const HeadHelmet = ({title, desc}) => {
   )
 }
 
-export default HeadHelmet
+export default memo(HeadHelmet)

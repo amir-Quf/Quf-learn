@@ -9,7 +9,7 @@ import fetchApi from "../../../store/server";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { registerSchemaAddNewCourse } from "../../../utils/register";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import PageWrapper from "../../../components/pageWrapper";
 import { motion } from "motion/react";
 import HeadHelmet from "../../../components/HeadHelmet";
@@ -48,10 +48,10 @@ const EditCourse = () => {
           icon: "error",
         });
       });
-  }, []);
+  }, [courseID]);
 
-  const { courses, fetchCourses } = useCourseStore();
-  const { user, updateData } = useAuthStore();
+  const { fetchCourses } = useCourseStore();
+  const { user } = useAuthStore();
   const navigator = useNavigate();
   const formik = useFormik({
     initialValues: initialValues || {
@@ -118,7 +118,7 @@ const EditCourse = () => {
     },
     enableReinitialize: true,
     validationSchema: registerSchemaAddNewCourse,
-  });
+  })
   
   const addSeason = () => {
     const newSeasons = [...formik.values.seasons];
@@ -127,7 +127,7 @@ const EditCourse = () => {
       sessions: [{ title: "", duration: "" }],
     });
     formik.setFieldValue("seasons", newSeasons);
-};
+}
 
 const addSession = (seasonIndex) => {
     const newSeasons = [...formik.values.seasons];
@@ -396,4 +396,4 @@ const deleteCourseHandler = () => {
   }
 };
 
-export default EditCourse;
+export default memo(EditCourse);
